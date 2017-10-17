@@ -1,0 +1,1629 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>我的艺龙.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  <script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+  <style type="text/css">
+  /*--------------------------------清除默认*/
+  *{
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  }
+  #logo-soso{
+  width: 100%;
+  height:85px;
+  }
+  #logo-center{
+  width: 1200px;
+  height:62px;
+  margin-top:10px;
+  }
+  #lianjie{
+  position: absolute; 
+  left: 670px;
+  top: 20px;
+ 
+  }
+  .upright{/*-------------------------竖杠*/
+  color: #999999;
+  margin:8px;
+  font-size: 13px;
+  }
+  #logo-center a{
+  text-decoration: none;
+  color: #999999;
+  font-size: 13px; 
+  }
+  #logo-center a:hover{
+  text-decoration: none;
+  color:red;
+  }
+  #logo-left{
+  position: absolute;
+  left: 1050px;
+  top: 20px;
+  }
+ #logo-center2{
+  position: absolute;
+  left: 1220px;
+  top: 22px;
+  }
+  #logo-right{
+ position: absolute;
+ left: 1375px;
+ top: 20px;
+  }
+ #phone{
+ font-size: 10px;
+ color: #FF6C67;
+ position: absolute;
+ left: 1270px;
+ top: 26px;
+ font-weight: bold;
+ }
+ #phone1{
+ font-size: 10px;
+ color: #4A94F5;
+ position: absolute;
+ left: 1430px;
+ top: 26px;
+ font-weight: bold;
+ }
+ #hours{
+ color: #999999;
+ }
+ #xiaochengxu{
+ position: absolute;
+ left:1050px;
+ top:80px;
+ display:none;
+ z-index:1;
+ }
+ #shoujiban{
+ position: absolute;
+ left:1220px;
+ top:80px;
+ display:none;
+ z-index:2;
+ }
+ #kefudianhua{
+ position: absolute;
+ left:1380px;
+ top:80px;
+ display:none;
+ z-index:2;
+ }
+ #div_biankuang{/*--------------横条样式*/
+ width:100%;
+ height:40px;
+ background-color: #2064C8;
+ position:absolute;
+ top:80px;
+ }
+ #div_biankuang a{
+ text-decoration: none;
+ color: white;
+ font-size:14px;
+ display:inline-block;
+ height:30px;
+ }
+ #shouye{
+ position: absolute;
+ left:330px;
+ top:0px;
+ }
+ #shouye a{
+ margin-left: 15px;
+ height:30px;
+ padding-top: 10px;
+ }
+ #shouye-first{
+ display:inline-block;
+ text-align:center;
+ background-color:#003679;
+ width:52px;
+ }
+ #shouye a:hover{/*----------------------------悬浮变化背景颜色*/
+ background-color:#0053ac;;
+ }
+ #load_denglu{
+ width: 120px;
+ height: 30px;
+ padding-top:8px;
+ background-color:#003679;
+ position: absolute;
+ left: 1420px;
+ top:1px;
+ }
+ #load_denglu a:hover{/*----------------------悬浮变化字体样式*/
+ color: #fff544;
+ }
+ #bazhe{/*------------------------------------调节彩色标识*/
+ position: absolute;
+ left: 485px;
+ top:-10px;
+ }
+ #songhongbao{
+ position: absolute;
+ left: 590px;
+ top:-10px;
+ }
+ #yuding{
+ position: absolute;
+ left: 675px;
+ top:-10px;
+ }
+ /*----------------------------------轮播按钮*/
+   #clickSel_div a{
+   display:inline-block;
+   width: 30px;
+   height: 4px;
+   }
+   #clickSel_div{
+   position: absolute;
+   left: 1342px;
+   top: 475px;
+   }
+   .sel_a{/*图片轮播初始化样式*/
+   background-color:#FF8800;
+   }
+  .blur_a{
+   background-color:#003E5D;
+   }
+   #showImg{/*---------------------------轮播大图存放*/
+   margin-top: 22px;
+   }
+   #click_denglu{/*-----------------------点击小窗口*/
+   width: 211px;
+   height: 281px;
+   position: absolute;
+   left: 1327px;
+   top:120px;
+   background-color:#FFFFFF;
+   }
+   #click_denglu2{
+   width: 211px;
+   height: 281px;
+   position: absolute;
+   left: 1027px;
+   top:120px;
+   background-color:#FFFFFF;
+   }
+  #click_denglu_small{               /*小窗口内的登录按钮*/
+  display:inline-block;
+  width:180px;
+  height: 32px;
+  margin-left:15px;
+  margin-top:12px;
+  background-color:#FF8800;/*------>#EE6600*/
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  padding-top: 5px;
+  text-align: center;
+  }
+  #click_denglu_small:hover{
+   background-color:#EE6600;
+   display: 
+   }
+ .click_denglu_smaller{
+ text-decoration:none;
+ font-size: 8px;
+ color:#999999;/*------------>#003E5D*/
+ display:inline-block;
+ width:62px;
+ height: 65px;
+ margin-left:0px;
+ margin-top: 5px;
+ }
+ .click_denglu_smallerr{
+ position: relative;
+ top: 50px;
+ left: 5px;
+ }
+ #small00Q{
+ background-image: url("images-small/登录-small_000.png");
+ background-repeat: no-repeat;
+ background-position:center;;
+ }
+ #small00Q:hover{
+ background-image: url("images-small/登录-small_00.png");
+ color:#003E5D;
+ }
+ #small01Q{
+ background-image: url("images-small/登录-small_001.png");
+  background-repeat: no-repeat;
+ }
+  #small01Q:hover{
+ background-image: url("images-small/登录-small_01.png");
+ color:#003E5D;
+ }
+ #small02Q{
+ background-image: url("images-small/登录-small_002.png");
+  background-repeat: no-repeat;
+ }
+  #small02Q:hover{
+ background-image: url("images-small/登录-small_02.png");
+ color:#003E5D;
+ }
+ #small03Q{
+ background-image: url("images-small/登录-small_003.png");
+  background-repeat: no-repeat;
+ }
+  #small03Q:hover{
+ background-image: url("images-small/登录-small_03.png");
+ color:#003E5D;
+ }
+ #small04Q{
+ background-image: url("images-small/登录-small_004.png");
+  background-repeat: no-repeat;
+ }
+ #small04Q:hover{
+ background-image: url("images-small/登录-small_04.png");
+ color:#003E5D;
+ }
+ #small05Q{
+ background-image: url("images-small/登录-small_005.png");
+  background-repeat: no-repeat;
+ }
+ #small05Q:hover{
+ background-image: url("images-small/登录-small_05.png");
+ color:#003E5D;
+ }
+ #small06Q{
+ background-image: url("images-small/登录-small_006.png");
+  background-repeat: no-repeat;
+ }
+ #small06Q:hover{
+ background-image: url("images-small/登录-small_06.png");
+ color:#003E5D;
+ }
+ #small07Q{
+ background-image: url("images-small/登录-small_007.png");
+  background-repeat: no-repeat;
+ }
+ #small07Q:hover{
+ background-image: url("images-small/登录-small_07.png");
+ color:#003E5D;
+ }
+ #click_denglu img{
+ margin-left:6px;
+ }
+ #click_denglu2 img{
+ margin-left:6px;
+ }
+ #choosecold{/*-------------------选项卡*/
+ width: 602px;
+ height: 302px;
+ overflow: hidden;
+ position: absolute;
+ left:340px;
+ top: 160px;
+ background-color: white;
+ }
+ #choosecold a{
+ color:#666666;
+ text-decoration:none;
+ display: inline-block;
+ border:1px #E1E1E1 solid;
+ width: 100px;
+ height: 60px;
+ text-align: center;
+ border-bottom: none; 
+ }
+ #choosecold img{
+ margin-top: 20px;
+ }
+ .sel_a{/*。。。。。。。。。。。。。。。。。。。。。。。选项卡左边样式*/
+ background-color:white;
+ display:inline-block;
+ border-right:none;
+ }
+ .bur_a{
+ background-color:#F3F3F3;
+ display:inline-block;
+ border-right: solid;
+ }
+ .t1{
+ display: inline-block;
+ position: relative;
+ top: -7px;
+ }
+                                           /*选项卡第一项*/
+ #jiudian{
+ width: 500px;
+ height: 302px;
+ position: absolute;
+ left:442px;
+ top: 160px;
+ } 
+ #jiudian_div{
+ border-bottom:3px #AAAAAA solid;
+ width: 400px;
+ height:28px;
+ margin-top:20px;
+ }
+ #jiudian span{
+ display:inline-block;
+ text-align:center;
+ width:90px;
+ height:25px;
+ margin-left:15px;
+ color:#555555;
+ font-size: 12px;
+ font-weight: bold;
+ }
+ .jiudian_div_div{
+ margin-top: 10px;
+ }
+ #three11{
+ position: absolute;
+ left:105px;
+ top:45px;
+ }
+ #three22{
+ position: absolute;
+ left:215px;
+ top:45px;
+ }
+ .mudidi,.ruzhu,.guanjianci,.tuifang{
+ font-weight: normal;
+ font-size: 14px;
+ color:#555;
+ }
+ 
+ .shoudu_city{
+ font-weight: normal;
+ border: 1px #ccc solid;
+  border-radius:5px;
+ width: 345px;
+ height: 32px;
+ font-size: 14px;
+ }
+ .date_riqi{
+ border:1PX #ccc solid;
+  border-radius:5px;
+ width: 100px;
+ height: 32px;
+ position: relative;
+ top: 10px;
+ left:-45px;
+ margin-left: 20px;
+ }
+ .value_pinpai{
+ border:1PX #ccc solid;
+ border-radius:5px;
+ width: 354px;
+ height: 32px;
+ color: #999;
+ }
+ .shoudu_city,.value_pinpai{
+ margin-left:4px;
+ margin-top: 20px;
+ }
+ .ruzhu,.tuifang{
+ position: relative;
+ top: 10px;
+ left: -35px;
+ }
+ .sousuo_search{
+ background-color: #f55;/*---->#e55*/
+ display:inline-block;
+ width:159;
+ height:25px;
+ background-image: url("icon2015-0123_01.png");
+ background-repeat: no-repeat;
+ background-position:40px;
+ color: white;
+ font-size: 20px;
+ font-weight: bold;
+ text-decoration: none;
+ padding-top:5px;
+ padding-left: 5px;
+ position: relative;
+ left: -35px;
+ top: 20px;
+ border-radius:5px;
+ }
+ .sousuo_search:hover{
+  background-color:#e55;
+ }
+  .sousuo_addsearch{
+  text-decoration: none;
+  color: #555;
+  border: 1px #ccc solid;
+  display:inline-block;
+  width: 95px;
+  height: 25px;
+  position:relative;
+  left: -20px;
+  top: 15px; 
+  background-image: url("icon2015-0123_02.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left:5px;
+  padding-top:4px;
+  font-size: 14px;
+  border-radius:5px;
+  } 
+   .sousuo_addsearch:hover{
+   color:white;
+   background-image: url("");
+   background-color: #39f;
+   }                                                     
+                                               /*选项卡第二项*/
+   #jipiao{
+   width: 500px;
+   height:302px;
+   position: absolute;
+   left:442px;
+   top: 160px; 
+   }
+   #jipiao_div{
+   border-bottom:3px #AAAAAA solid;
+   width: 400px;
+   height:28px;
+   margin-top:20px;
+   }
+   #jipiao span{
+   display:inline-block;
+   text-align:center;
+   width:90px;
+   height:25px;
+   margin-left:15px;
+   color:#555555;
+   font-size: 12px;
+   font-weight: bold;
+   }
+ .jipiao_div_div{
+ margin-top: 10px;
+ }
+ #three33{
+ position: absolute;
+ left:105px;
+ top:45px;
+ }
+ #three44{
+ position: absolute;
+ left:215px;
+ top:45px;
+ }
+ #hangchengleixing span{
+   padding: 0 5px;
+   color:#555;
+   font-size:14px;
+   position:relative;
+   left:-55px;
+   top:-2px;
+   font-weight: normal;
+ } 
+ #hangchengleixing input{
+   position: relative;
+   left:-5px;
+   top:1px;
+ } 
+  #hangchengleixing b{
+  font-weight: normal;
+  font-size: 14px;
+  color: #555;
+  margin-left: -80px;
+  display:inline-block;
+  margin-top:20px;
+  }                                         /*选项卡第三项*/
+   #huochepiaopiao{
+   width: 500px;
+   height:302px;
+   position: absolute;
+   left:442px;
+   top: 160px; 
+   }
+   #shoujibanban{
+   width: 500px;
+   height:302px;
+   position: absolute;
+   left:442px;
+   top: 160px;
+   }
+                             /*个性化展示*/
+ #show_positional{
+ margin-top: 20px;
+ margin-left:329px;
+ }
+                              
+ #show_positional ul li{
+ float:left;
+ overflow:hidden;
+ } 
+#positional_show{
+padding:5px 20px;
+border-radius:20px;
+border:1px solid #ccc;
+width:215px;
+height:32px;
+font-size:16px;
+color:#555;
+}
+#positional_show img{
+margin-top:5px;
+}
+#positional_show a{
+text-decoration: none;
+color:#37e;
+}
+#positional_show a:hover{
+color:#F98B43;
+}
+.style_show{
+display:inline-block;
+width:30px;
+font-size:30px;
+font-weight:bold;
+position:relative;
+left:65px;
+top:-230px;
+font-family:Microsoft Yahei;
+color:white;
+ }  
+ .bigger{
+ width:400px;
+ height:260px;
+ }   
+ .smaller{
+ width:175px;
+  height: 260px;
+ } 
+                                          /* 目的地指数*/
+ #aim_imgs{
+ margin-top:300px;
+ margin-left: 329px;
+ }                                         
+ #aim_buttom{
+ border-bottom:2px #f55 solid;
+ width: 1220px;
+ height: 45px;
+ } 
+ #aim_num{
+ color:#f55;
+ font-size:24px;
+ } 
+ #in_leader{
+ margin-top: 15px;
+ }
+ ._style_word{
+ font-size: 12px;
+ color:#999;
+ }
+ #in_potter{                            /*国内*/
+ text-decoration:none;
+ display:inline-block;
+ width:45px;
+ height:26px;
+ background-image:url("第二部分imgs/icon_index_01.png");
+ background-repeat: no-repeat;
+ padding-left: 34px;
+ padding-top: 0px;
+ color: #555;
+ font:18px/26px Microsoft yahei;
+ }
+ .qweq{
+ font:14px/22px Microsoft yahei;
+ text-decoration: none;
+ color:#555;
+ border: 1px solid #F66;
+ padding: 0 9px; 
+ border-radius:12px;
+ background-color:#F66;
+ color: white;
+ margin-left:10px;
+ }
+ .qwe{
+ text-decoration: none;
+ color:#555;
+ padding: 3 10px; 
+ border-radius: 12px;
+ margin-left:10px;
+ font-size: 14px;
+ border: 1px white solid;
+ 
+ } 
+ .qwee{
+ text-decoration: none;
+ color:#555;
+ padding: 3 10px; 
+ border-radius: 12px;
+ margin-left:10px;
+ font-size: 14px;
+ border: 1px white solid;
+ position: relative;
+ left:490px;
+ }
+ .qwee:hover{
+ color: #F66;
+ }
+ .qwe:hover{
+ border: 1px #F66 solid;
+ background-color: white;
+ color: #F66;
+ }
+ #in_imgs{
+ width: 1240px;
+ height: 200px;
+ }
+ #in_imgs .li_img{
+ float: left;
+ margin-right:15px;
+ width: 293px;
+ height:160px;
+ overflow: hidden;
+ margin-top: 10px;
+ position: relative;
+ } 
+ .city_name{
+ font: 24px/30px Microsoft yahei;
+ color: #fff;
+ text-indent: .5em;
+ text-shadow: 1px 1px 7px #000;
+ position: relative;
+ left:-225px;
+ top: -35px;
+ margin-left:235px;
+ float: left;
+ text-decoration: none;
+ }
+ .city_said{
+ color: #555;
+ font: 14px/30px Microsoft yahei;
+ float: left;
+ position:relative;
+ left:-5px;
+ top:-20px;
+ margin-right:25px;
+ border-bottom: 2px #CCCCCC solid;
+ width: 283px;
+ height: 30px;
+ }
+   
+ #out_potter{                                  /*国外*/
+ text-decoration:none;
+ display:inline-block;
+ width:45px;
+ height:26px;
+ background-image:url("第二部分imgs/icon_index_03.png");
+ background-repeat: no-repeat;
+ padding-left: 34px;
+ padding-top: 0px;
+ color: #555;
+ font:18px/26px Microsoft yahei;
+ } 
+ .qweee{
+ text-decoration: none;
+ color:#555;
+ padding: 3 10px; 
+ border-radius: 12px;
+ margin-left:10px;
+ font-size: 14px;
+ border: 1px white solid;
+ position: relative;
+ left:580px;
+ }  
+ .qweee:hover{
+ color: #F66;
+ } 
+ #out_imgs .li_img{
+ float: left;
+ margin-right:15px;
+ width: 293px;
+ height:160px;
+ overflow: hidden;
+ margin-top: 10px;
+ position: relative;
+ }
+ .city_name2{
+ font: 24px/30px Microsoft yahei;
+ color: #fff;
+ text-indent: .5em;
+ text-shadow: 1px 1px 7px #000;
+ position:relative;
+ left:-230px;
+ top: -35px;
+ margin-left:240px;
+ float:left;
+ text-decoration: none;
+ } 
+ .city_said2{
+ color: #555;
+ font: 14px/30px Microsoft yahei;
+ float: left;
+ position:relative;
+ left:-5px;
+ top:-20px;
+ margin-right:25px;
+ border-bottom: 2px #CCCCCC solid;
+ width: 283px;
+ height: 30px;
+ } 
+  #chaozhi{                                    /*超值特价票*/
+  border-bottom:2px solid #49f;
+  padding: 5px 0; 
+  width:1230px;
+  margin-left: 320px;
+  font: 24px/30px Microsoft yahei;
+  color:#49f;                        
+  }                                        
+ .chaozhi{
+ text-decoration: none;
+ }
+ #flyings{                                  
+ text-decoration:none;
+ display:inline-block;
+ width:45px;
+ height:26px;
+ background-image:url("第二部分imgs/icon_index_01_01.png");
+ background-repeat: no-repeat;
+ padding-left: 34px;
+ padding-top: 0px;
+ color: #555;
+ font:18px/26px Microsoft yahei;
+ } 
+ .qweqq{
+ font:14px/22px Microsoft yahei;
+ text-decoration: none;
+ color:#555;
+ padding: 0 9px; 
+ border-radius:12px;
+ background-color:#49f;
+ color: white;
+ margin-left:10px;
+ }
+ .qwew{
+ text-decoration: none;
+ color:#555;
+ padding: 3 10px; 
+ border-radius: 12px;
+ margin-left:10px;
+ font-size: 14px;
+ border: 1px white solid;
+ } 
+ .qwew:hover{
+ border: 1px #49f solid;
+ background-color: white;
+ color: #49f;
+ }
+ #go_where{
+ margin-left: 320px;
+ margin-top: 30px;
+ }
+ #feijipiao{
+ margin-left: 335px;
+ margin-top: 10px;
+ }
+ .card_fly{
+ display:inline-block;
+ width: 200px;
+ height: 100px;
+ overflow: hidden;
+ margin-left:-8px;
+ border: 1px #D8E8FE solid;
+ }
+ .card_fly:hover{
+ border: 1px #4499FF solid;
+ }
+ #subways{                                  
+ text-decoration:none;
+ display:inline-block;
+ width:55px;
+ height:26px;
+ background-image:url("第二部分imgs/icon_index_01_03.png");
+ background-repeat: no-repeat;
+ padding-left: 34px;
+ padding-top: 0px;
+ color: #555;
+ font:18px/26px Microsoft yahei;
+ } 
+ #run_where{
+ margin-left: 320px;
+ margin-top: 30px;
+ }
+ #huochepiao{
+ margin-left: 335px;
+ margin-top: 10px;
+ }
+ .card_fly{
+ display:inline-block;
+ width: 200px;
+ height: 100px;
+ overflow: hidden;
+ margin-left:-8px;
+ border: 1px #D8E8FE solid;
+ }
+ .card_fly:hover{
+ border: 1px #4499FF solid;
+ }
+  #leader{                                    /*旅游指南*/
+  border-bottom:2px solid #77CC11;
+  padding: 5px 0; 
+  width:1230px;
+  margin-left: 320px;
+  font: 24px/30px Microsoft yahei;
+  color:#77CC11;                        
+  }                                        
+ .leader{
+ text-decoration: none;
+ color: #77CC11;
+ }
+ #leader_lead{
+ margin-left: 320px;
+ margin-top:30px;
+ }
+ #leader_lead li{
+ list-style:none;
+ width: 200px;
+ overflow: hidden;
+ height: 57px;
+ font: 14px/57px Microsoft yahei;
+ color: #555;
+ padding: 0 10px;
+ border-buttom: 1px solid #ccc;
+ /*background: #89ca00;*/
+    } 
+ #leader_lead a{
+ text-decoration: none;
+ color: #555;
+ }
+ #leader_lead li:hover{
+ background-color: #89ca00;
+ }
+ #leader_show{
+ width:380px;
+ height:220px;
+ overflow:hidden;
+ position: absolute;
+ left: 541px;
+ top: 1902px;
+ }
+ #right_leader{
+ position: absolute;
+ left:927px;
+ top: 1900px;
+ }
+ #right_leader img{
+ width:310px;
+ height:180px;
+ overflow: hidden;
+ margin-left:3px;
+ }
+ .right_leader_a{
+ color:#3377EE;
+ text-decoration: none;
+ display:inline-block;
+ /*border-bottom: 1px #CCCCCC solid;*/
+ width: 310px;
+ height: 30px;
+ background-color: #F7F7F7;/*#CCCCCC------>#89CA00*/
+ padding-top:10px;
+ font-size: 14px;
+ }
+ .right_leader_a:hover{
+ color: #FD8293;
+ }
+ #_siblings{                             /*晃动特效样式*/
+  margin-top:20px;
+ margin-left:320px;
+ width:1230px;
+ height: 101px;
+ background-color: #F7F7F7;
+ }
+ #_emails{                                 /*图案移动*/
+ border-top:1px #cccccc solid;
+ margin-left:320px;
+ width: 1230px;
+ height: 80px;
+ background-color: #F7F7F7;
+ }
+ .wasd{
+ /*list-style:none;*/			
+ font-size: 14px;
+ font-family: arial,Verdana, Geneva, Helvetica;
+ color: #555;
+ display:inline-block;
+ position: relative;
+ top: -25px;
+ }
+ .wasd1{
+ display:inline-block;
+ background-image: url("第二部分imgs/icon_index_img_01.png");
+ background-repeat: no-repeat;
+ overflow: hidden;
+ width: 60px;
+ height: 60px;
+ }
+ .wasd2{
+ display:inline-block;
+ background-image: url("第二部分imgs/icon_index_img_02.png");
+ background-repeat: no-repeat;
+ overflow: hidden;
+ width: 60px;
+ height: 60px;
+ }
+ .wasd3{
+ display:inline-block;
+ background-image: url("第二部分imgs/icon_index_img_03.png");
+ background-repeat: no-repeat;
+ overflow: hidden;
+ width: 60px;
+ height: 60px;
+ }
+ .wasd4{
+ display:inline-block;
+ background-image: url("第二部分imgs/icon_index_img_04.png");
+ background-repeat: no-repeat;
+ overflow: hidden;
+ width: 60px;
+ height: 60px;
+ }
+ #_siblings ul li{
+ list-style:none;
+ float: left;
+ padding-left:300px; 
+ margin-left: -220px;
+ margin-top:20px;
+ }
+ #_emails_left{
+ height: 80px;
+ width: 110px;
+ background-image: url("第二部分imgs/icon_indexmoveing.png");
+ background-position: -374px -10px;
+ }
+ #_emails_left:hover{
+  background-position: -358px -10px;
+ }
+ #_emails_right a{
+ text-decoration: none;
+ font-size: 14px;
+ position: relative;
+ top: -60px;
+ }
+ #_emails_right a:hover{
+ color: #EE6600;
+ }
+ #_emails_kiss{
+ font: 16px/30px Microsoft yahei;
+ color: #71829d;
+ }
+ #_email_input{
+ width: 200px;
+ height: 28px;
+ border: 1px solid #ccc;
+ color: #555;
+}
+ #_emails_rightnow{
+ text-decoration: none;
+ display:inline-block;
+ width: 80px;
+ height:12px;
+ background: #3377dd;
+ color: #fff;
+ text-align: center;
+ padding-bottom:10px;
+ }
+ #_email_center{
+ padding-left:300px;
+ position: relative;
+ top: -45px;
+ }                                /*底部链接*/
+ #_bottom_contants{
+ margin-left: 320px;
+ margin-top:20px;
+ width:1230px;
+ border: 1px red solid;
+ }
+                                    
+ #_bottom_contants ul li{
+ list-style: none;
+ float: left;
+ }
+ ._bottom_shift_{
+ color: #5D96C7;
+ font-weight:bolder;
+ font-size: 20px;
+ margin-right: 10px;
+ display:inline-block;
+ margin-top: 20px;
+ }
+ .bottom_markings{
+ font: 18px/1 Microsoft Yahei;
+ color: #555;
+ margin-right:120px;
+ display:inline-block;
+ margin-top: 10px;
+ }
+ #_bottom_contants ul li a{
+ color: #333;
+ text-decoration: none;
+ font-size: 12px;
+ margin-left:20px;
+ display:inline-block;
+ margin-top:10px;
+ }
+ #_bottom_contants ul li a:hover{
+ color: #F55;
+ margin-left: 5px;
+ transition: margin 0.5s;
+  }
+ #_bottom_contants ul li img{
+ margin-left:25px;
+ margin-top: 10px;
+ }
+ #buttom_info{
+ margin-left: 500px;
+ display:inline-block;
+ margin-top: 30px;
+ font-size: 12px;
+ font-family: arial,Verdana, Geneva, Helvetica;
+ color: #555;
+ }
+ #buttom_buttom{
+ position: relative;
+ top: 20px;
+ padding-right:50px;
+ }
+ #buttom_buttom a img{
+ width:95px;
+ height:30px;
+ position:relative;
+ top:0px;
+ transition:2s;
+-moz-transition: 2s;	/* Firefox 4 */
+-webkit-transition: 2s;	/* Safari 和 Chrome */
+-o-transition:2s;	/* Opera */
+}
+ }
+ #buttom_buttom a img:HOVER{
+ top:10px; 
+ }
+ #buttomest{
+ width: 100%;
+ height: 40px;
+ margin-top:40px;
+ margin-bottom: 20px;
+ background-color: #7c8fa2;
+ }
+ #buttomest a{
+ text-decoration:none;
+ display:inline-block;
+ width:166px;
+ height:28px;
+ text-align: center;
+ padding-top:10px;
+ color: #333;
+ font-size: 14px;
+ position: relative;
+left: 320px;
+ }
+ #buttomest a:hover{
+ background-color: #8da1b5;
+ }
+</style>
+  <script type="text/javascript">
+  //图片轮播代码块
+   //最图片数和当前图片位置 作为全局,供下次执行函数时使用
+    var allImg=7;
+    var nowImg=1;
+    $(function(){
+    	//初始化样式
+    $("#clickSel_div a:first").attr("class","sel_a").siblings().attr("class","blur_a");
+        //点选小长条按钮 切换
+    	$("#clickSel_div a").click(function(){
+    		nowImg=$(this).index()+1;
+    		//修改id=showImg 标签的src
+    		$("#showImg").attr("src","image-play"+nowImg+".jpg");
+    		//同步小长条状态
+    		$(this).attr("class","sel_a").siblings().attr("class","blur_a");
+    	});
+        //定时切换
+    	window.setInterval("leftRightBtDeal(1)",2000);
+        //点击显示登录小窗口
+        $("#click_denglu").hide();//对小窗口进行初始化隐藏
+        $("#load_denglu,#click_denglu").hover(function(){
+        	 $("#click_denglu").toggle();
+        });
+        $("#pp1").hover(function(){
+        	$("#xiaochengxu").toggle();
+        });
+        $("#pp2").hover(function(){
+        	$("#shoujiban").toggle();
+        });
+        $("#pp3").hover(function(){
+        	$("#kefudianhua").toggle();
+        });
+        //轮播上选项卡的选择
+        $("#choosecold a").eq(0).attr("class","sel_a")
+        .siblings().attr("class","bur_a");
+        $("#choosecold a").eq(4).css("borderTop","none");
+        $("#choosecold a").eq(3).css("borderButton","none");
+        $("#choosecold a").click(function(){
+        $("#choosecold a").eq($(this).index()/2).attr("class","sel_a")
+        .siblings().attr("class","bur_a");
+        $(".choose_card").eq($(this).index()/2).show().siblings(".choose_card").hide();
+        });
+        //选项卡第一项
+        
+        $(".jiudian_div_div").eq(1).hide();
+        	$("#three22").hide();
+        $("#jiudian span:eq(0)").css("borderBottom","2px #0066CC solid");
+        $("#counity_forgainhotel a").click(function(){
+        	var indexvall=$(this).index();
+        	if(indexvall==0){/*#0066CC*/
+        		$(".jiudian_div_div").eq(0).show();
+        		$(".jiudian_div_div").eq(1).hide();
+        		$("#jiudian span:eq(0)").css("borderBottom","2px #0066CC solid");
+        		$("#jiudian span:eq(1)").css("borderBottom","2px #ccc solid");
+        		$("#three22").hide();
+        		$("#three11").show();
+        	}else{
+        	$(".jiudian_div_div").eq(0).hide();
+            $(".jiudian_div_div").eq(1).show();
+            $("#jiudian span:eq(1)").css("borderBottom","2px #0066CC solid");
+        	$("#jiudian span:eq(0)").css("borderBottom","2px #ccc solid");
+            $("#three11").hide();
+            $("#three22").show();
+        	}
+        });
+        //选项卡第二项
+       
+        	$("#three44").hide();
+        $("#hangchengleixing input:eq(0)").attr("checked","checked");
+       
+        $("#jipiao span:eq(0)").css("borderBottom","2px #0066CC solid");
+        $("#counity_jipiao a").click(function(){
+        	var indexvall=$(this).index();
+        	if(indexvall==0){/*#0066CC*/
+        		$("#hangchengleixing input:eq(0)").attr("checked","checked");
+        		
+        		$("#hangchengleixing img:eq(1)").hide();
+        	    $("#hangchengleixing img:eq(0)").show();
+        		$("#jipiao span:eq(0)").css("borderBottom","2px #0066CC solid");
+        		$("#jipiao span:eq(1)").css("borderBottom","2px #ccc solid");
+        		$("#three44").hide();
+        		$("#three33").show();
+        	}else{
+        	$("#hangchengleixing input:eq(1)").attr("checked","checked");
+            
+            $("#hangchengleixing img:eq(0)").hide();
+        	$("#hangchengleixing img:eq(1)").show();
+            $("#jipiao span:eq(1)").css("borderBottom","2px #0066CC solid");
+        	$("#jipiao span:eq(0)").css("borderBottom","2px #ccc solid");
+            $("#three33").hide();
+            $("#three44").show();
+        	}
+        });
+        
+        
+                              /* 展示你的个性化内容*/
+        $("#imgs_positional li").attr("class","smaller");/*对照片进行初始化样式*/
+        $("#imgs_positional li").hover(function(){
+        $(this).animate({"width":400},500).siblings().animate({"width":133},500);
+        /*$(this).attr("class","bigger").siblings().attr("class","smaller");*/
+        $("#imgs_positional li span").eq($(this).index()).animate({"left":20},500).hide()
+        .siblings()
+        .animate({"left":20},500).show();
+        },function(){
+        $("#imgs_positional li").animate({"width":175},500);
+      /*$("#imgs_positional li").attr("class","smaller");*/
+        $("#imgs_positional li span").eq($(this).index()).animate({"right":20},500).show();
+        });
+                                                    /*国内景色*/
+        $("#in_imgs .li_img").hover(function(){
+        $(this).animate({"top":-5},300);
+        $("#in_imgs .city_said").eq($(this).index()).css("borderBottom","2px #F66 solid")
+        .siblings().not(".city_name").css("borderBottom","2px #ccc solid");
+        },function(){
+        $(this).animate({"top":5},300);
+        });
+                                                 /* 海外景色*/                
+        $("#out_imgs .li_img").hover(function(){
+        $(this).animate({"top":-5},300);
+        $("#out_imgs .city_said2").eq($(this).index()).css("borderBottom","2px #F66 solid")
+        .siblings().not(".city_name2").css("borderBottom","2px #ccc solid");
+        },function(){
+        $(this).animate({"top":5},300);
+        });
+                                                 /*旅游指南*/
+         /*对第一个浮动显示初始化背景 */                                       
+         $("#leader_lead li").hover(function(){
+         $("#leader_show").attr("src","第二部分imgs/1707289"+($(this).index()+1)+".jpg")
+         });                                        
+                            /*右边内容显示或隐藏 */                      
+        $(".right_leader_a").css("borderBottom","2px #cccccc solid");                                      
+        $("#right_leader a").hover(function(){
+        $(".right_leader_a").eq($(this).index()).css("borderBottom","2px #89CA00 solid")
+        .siblings().css("borderBottom","2px #cccccc solid");
+        },function(){
+        $(".right_leader_a").css("borderBottom","2px #cccccc solid");	
+        }); 
+        /*晃动特效*//*失败*/
+        $("#_siblings ul li i").click(function(){
+        $("#_siblings ul li i").eq($(this).index())
+        .animate({"right":2},30).animate({"left":2},30);
+        });
+       
+       });
+       var leftRightBtDeal=function(actionID){
+   		var actionType=actionID==1?"nextImg":$(this).attr("id");
+   		if("backImg"==actionType&&nowImg==1){
+   			nowImg=allImg+1;
+   		}else if("nextImg"==actionType&&nowImg==allImg){
+   			nowImg=0;
+   		}
+   		if("backImg"==actionType){
+   			nowImg--;
+   		}else{
+   			nowImg++;
+   		}
+   		//修改id=showImg 标签的src
+   		$("#showImg").attr("src","image-play"+nowImg+".jpg");
+   		//同步小长条状态
+   		$("#clickSel_div a").eq(nowImg-1).attr("class","sel_a").siblings().attr("class","blur_a");
+   	}
+       
+       
+  </script>
+ <script type="text/javascript" src="jquery-3.2.1.js"></script></head>
+  <body>
+    <div id="logo-soso" align="center"><!--上方logodiv-->
+    <div id="logo-center">
+    <img src="logo111.png" align="left"><!--logo图片-->
+    <div id="lianjie">
+    <a href="jvascript:void(0)"><span>积分商城</span></a><span class="upright">|</span>
+    <a href="jvascript:void(0)"><span>礼品卡</span></a><span class="upright">|</span>
+    <a href="jvascript:void(0)"><span>在线客服</span></a><span class="upright">|</span>
+    <a href="jvascript:void(0)"><span>English</span></a> 
+    </div>
+    <div id="pp1"><!--logo左边选项卡-->
+    <img src="logo-left.png" id="logo-left">
+    </div><img src="xiaochengxu.png" id="xiaochengxu">
+    <div id="pp2"><!--logo中间选项卡-->
+    <img src="logo-center.gif" id="logo-center2">
+    <div id="phone" align="left">
+    <span>手机版</span><br>
+    <span>专享五折起</span>
+    </div>
+    </div><img src="shoujiban.png" id="shoujiban">
+    <div id="pp3"><!--logo右边选项卡-->
+    <img src="logo-right.png" id="logo-right">
+    <div id="phone1" align="left">
+    <span id="hours">7x24小时客服电话</span><br>
+    <span>4009-333-333</span>
+    </div>
+    </div><img src="kefudianhua.png" id="kefudianhua">
+    </div>
+    </div>
+    <div id="div_biankuang"><!--logo下横条-->
+    <div id="shouye">
+       <a href="javascript:void(0)" id="shouye-first">首页</a>
+       <a href="javascript:void(0)">国内酒店</a>
+       <a href="javascript:void(0)">国际酒店</a>
+       <a href="javascript:void(0)">短租公寓</a>
+       <a href="javascript:void(0)">机票</a>
+       <a href="javascript:void(0)">火车票</a>
+       <a href="javascript:void(0)">汽车票</a>
+       <a href="javascript:void(0)">旅游指南</a>
+    </div>
+    <div id="load_denglu" align="center" style="cursor:pointer">
+    <a href="艺龙登录.html">登录</a><span class="upright">|</span>
+    <a href="艺龙注册.html">注册</a>
+    </div>
+    <img src="八折.png" id="bazhe"><!--彩色标识-->
+    <img src="送红包.png" id="songhongbao">
+    <img src="预定.png" id="yuding">
+    </div>
+    <!--轮播图--></body>
+    <div id="imgPlay">
+    <img src="image-play1.jpg" id="showImg">
+    </div>
+    <div id="clickSel_div">               <!-- 轮播图小按钮 -->
+	    <a href="javascript:void(0);"></a>
+	    <a href="javascript:void(0);"></a>
+	    <a href="javascript:void(0);"></a>
+	    <a href="javascript:void(0);"></a>
+	    <a href="javascript:void(0);"></a>
+	    <a href="javascript:void(0);"></a>
+	    <a href="javascript:void(0);"></a>
+	 </div>
+	 <!--点击登录，显示小窗口-->
+	  <div id="click_denglu" align="left">
+	  <a href="艺龙登录.html"><span id="click_denglu_small">登录</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small00Q"><span class="click_denglu_smallerr">酒店订单</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small01Q"><span class="click_denglu_smallerr">机票订单</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small02Q"><span class="click_denglu_smallerr">火车票订单</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small03Q"><span class="click_denglu_smallerr">现金账户</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small04Q"><span class="click_denglu_smallerr">汽车票订单</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small05Q"><span class="click_denglu_smallerr">酒店收藏</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small06Q"><span class="click_denglu_smallerr">我的点评</span></a>
+	  <a href="javascript:void(0)" class="click_denglu_smaller" id="small07Q"><span class="click_denglu_smallerr">个人设置</span></a>
+	  </div>
+	  <!--轮播图上的选项卡 -->
+	  <div id="choosecold">
+	  <a href="javascript:void(0)"><img src="image-choose/icon_index_00.png"><span class="t1">酒店</span></a><br>
+	  <a href="javascript:void(0)"><img src="image-choose/icon_index_01.png"><span class="t1">机票</span></a><br>
+	  <a href="javascript:void(0)"><img src="image-choose/icon_index_02.png"><span class="t1">火车票</span></a><br>
+	  <a href="javascript:void(0)"><img src="image-choose/icon_index_03.png"><span class="t1">手机版</span></a><br>
+	  <a href="javascript:void(0)"></a>
+	  </div>
+	   <div id="jiudian" align="center" class="choose_card" style="display: none;"><!--选项卡-酒店-->
+	   <div id="jiudian_div" align="left" >
+	   <div id="counity_forgainhotel">                   
+	   <a href="javascript:void(0)"><span>国内酒店</span></a>
+	   <a href="javascript:void(0)"><span>国际酒店</span></a>
+	   <img src="小三角1.png" id="three11">
+	   <img src="小三角1.png" id="three22">
+	   </div>
+	   <div class="jiudian_div_div"  align="center"><!--1111111111111111-->
+	   <b class="mudidi">目的地</b><input type="text" value="北京市" class="shoudu_city"><br>
+	   <b class="ruzhu">入住</b><input type="text" value="2017-08-26" class="date_riqi"> <b class="tuifang">退房</b><input type="text" value="2017-08-27" class="date_riqi"><br>
+	   <b class="guanjianci">关键词</b><input type="text" value="如位置\酒店名\品牌" class="value_pinpai"><br>
+	   <a href="javascript:void(0)" class="sousuo_search">搜索</a>
+	   <a href="javascript:void(0)" class="sousuo_addsearch">地图搜索</a>
+	   </div>
+	   <div class="jiudian_div_div" align="center"><!--2222222222222222-->
+	   <b class="mudidi">目的地</b><input type="text" value="首尔" class="shoudu_city"><br>
+	   <b class="ruzhu">入住</b><input type="text" value="2017-08-26" class="date_riqi"> <b class="tuifang">退房</b><input type="text" value="2017-08-27" class="date_riqi"><br>
+	   <b class="guanjianci">关键词</b><input type="text" value="如位置\酒店名\品牌" class="value_pinpai"><br>
+	   <a href="javascript:void(0)" class="sousuo_search">搜索</a>
+	   </div>
+	   </div>
+	  </div>
+	  <div class="choose_card" id="jipiao" align="center" ><!--选项卡-机票-->
+	  <div id="jipiao_div" align="left" >
+	   <div id="counity_jipiao">                    
+	   <a href="javascript:void(0)"><span>国内机票</span></a>
+	   <a href="javascript:void(0)"><span>国际机票</span></a>
+	   <img src="小三角1.png" id="three33">
+	   <img src="小三角1.png" id="three44">
+	   </div>
+	   </div>
+	  <div id="hangchengleixing"> 
+	  <b>航程类型</b>                      <!-- 航程类型 -->
+	  <input type="radio" name="leixing2"><span>单程</span>
+	  <input type="radio" name="leixing2"><span>往返</span>
+	  <img src="guoneijipiao1.png">
+	  <img src="guowaijipiao1.png" style="display: none;"><br>
+	  <a href="javascript:void(0)" class="sousuo_search">搜索</a>
+	  </div>
+	  </div>
+	  <div class="choose_card" id="huochepiaopiao" align="center" style="display: none;"><!--选项卡-火车票-->
+	  <img src="huochepiaopiappiao.png">
+	  </div>
+	  <div class="choose_card" id="shoujibanban" align="center" style="display: none;"><!--选项卡-手机版-->
+	  <img src="shoujibanben.png">
+	  </div>
+	  
+	  
+	  
+	  <div id="show_positional">                  <!--登陆展示你的个性化内容-->
+	  <div id="positional_show">
+	  <img src="第二部分imgs/icon_index副本.png">
+	  <a href="艺龙登录.html">登录</a><span>展示你的个性化内容</span>
+	  </div>
+	  <ul id="imgs_positional">
+	  <li ><img src="img_positional/20150422_ifold1.jpg">
+	  <span class="style_show">园林酒店</span>
+	  </li>
+	  <li ><img src="img_positional/20150120_ifold2.jpg">
+	  <span class="style_show">情侣酒店</span>
+	  </li>
+	  <li ><img src="img_positional/20150120_ifold3.jpg">
+	  <span class="style_show">设计师酒店</span>
+	  </li>
+	  <li ><img src="img_positional/20150120_ifold4.jpg">
+	  <span class="style_show">青年旅社</span>
+	  </li>
+	  <li ><img src="img_positional/20150120_ifold5.jpg">
+	  <span class="style_show">特色客栈</span>
+	  </li>
+	  <li ><img src="img_positional/20150120_ifold6.jpg">
+	  <span class="style_show">海盗酒店</span>
+	  </li>
+	  <li ><img src="img_positional/20150120_ifold7.jpg">
+	  <span class="style_show">海外温泉</span>
+	  </li>
+	  </ul>
+	  </div>
+	  <div id="aim_imgs">                     <!-- 目的地指数 -->
+	  <div id="aim_buttom">                     <!--导航条-->
+	  <b id="aim_num">目的地指数</b><span class="_style_word">覆盖全球75万家酒店，你想住的，我们都有</span>
+	  </div>
+	  <div id="country_in">                      <!-- 国内 -->
+	  <div id="in_leader">                    <!-- 国内导航条 -->
+	  <a href="" id="in_potter">国内</a>
+	  <a href="javascript:void(0)" class="qweq">登高踏青</a>
+	  <a href="javascript:void(0)" class="qwe">小憩温泉</a>
+	  <a href="javascript:void(0)" class="qwe">天然氧吧</a>
+	  <a href="javascript:void(0)" class="qwe">草原撒欢</a>
+	  <a href="javascript:void(0)" class="qwe">小镇时光</a>
+	  <a href="javascript:void(0)" class="qwe">美食之城</a>
+	  <a href="javascript:void(0)" class="qwee">更多&gt;&gt;</a>
+	  </div>
+	  <div id="in_imgs">                      <!-- 国内图片 -->
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/dgtq-ems.jpg"></a></div>
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/dgtq-hs.jpg"></a></div>
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/dgtq-ls.jpg"></a></div>
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/dgtq-wts.jpg"></a></div>
+	  <div class="city_name">黄山</div>
+	  <div class="city_name">峨眉山</div>
+	  <div class="city_name">五台山</div>
+	  <div class="city_name">庐山</div>
+	  <p class="city_said">春意撩人 登高踏青赏春色</p>
+	  <p class="city_said">阳春三月 闻着茶香去峨眉</p>
+	  <p class="city_said">迎春 祈福 登五台</p>
+	  <p class="city_said">亲近自然 春游庐山</p>
+	  </div>
+	  </div><br><br>
+	  <div id="country_out">                     <!-- 国外 -->
+	  <div id="out_leader">                                    <!-- 国外导航条 -->
+	  <a href="" id="out_potter">海外</a>
+	  <a href="javascript:void(0)" class="qweq">文艺清新</a>
+	  <a href="javascript:void(0)" class="qwe"> 面朝大海</a>
+	  <a href="javascript:void(0)" class="qwe">别样建筑</a>
+	  <a href="javascript:void(0)" class="qwe">浪漫主义</a>
+	  <a href="javascript:void(0)" class="qwe">魅力都市</a>
+	  <a href="javascript:void(0)" class="qweee">更多&gt;&gt;</a>
+	  </div>
+	  <div id="out_imgs">                           <!-- 国外图片 -->
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/termini_it1_jzd.jpg"></a></div>
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/termini_it1_ld.jpg"></a></div>
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/termini_it1_lm.jpg"></a></div>
+	  <div class="li_img"><a href="javascript:void(0)"><img src="第二部分imgs/termini_it1_qm.jpg"></a></div>
+	  <div class="city_name2">伦敦</div>
+	  <div class="city_name2">清迈</div>
+	  <div class="city_name2">济州岛</div>
+	  <div class="city_name2">罗马</div>
+	  <p class="city_said2">风情英伦，帝国余韵</p>
+	  <p class="city_said2">泰北玫瑰，慢行古城</p>
+	  <p class="city_said2">最传统的浪漫，最神秘的自然</p>
+	  <p class="city_said2">永恒之城，魅力无限</p>
+	  </div>
+	  </div>
+	  </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	  <div id="chaozhi">                                   <!-- 超值特价票 -->
+	  <a href="javascript:void(0)" class="chaozhi">超值特价票</a>
+	  </div>
+	  <div id="go_where">
+	  <a href="" id="flyings">机票</a>
+	  <a href="javascript:void(0)" class="qweqq">北京出发</a>
+	  <a href="javascript:void(0)" class="qwew">上海出发</a>
+	  <a href="javascript:void(0)" class="qwew">广州出发</a>
+	  <a href="javascript:void(0)" class="qwew">杭州出发</a>
+	  <a href="javascript:void(0)" class="qwew">深圳出发</a>
+	  <a href="javascript:void(0)" class="qwew">成都出发</a>
+	  <a href="javascript:void(0)" class="qwee">更多&gt;&gt;</a>
+	  </div>
+	  <div id="feijipiao">
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_01.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_02.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_03.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_04.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_05.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_06.png"></a>
+	  </div>
+	   <div id="run_where">
+	  <a href="" id="subways">火车票</a>
+	  <a href="javascript:void(0)" class="qweqq">北京出发</a>
+	  <a href="javascript:void(0)" class="qwew">上海出发</a>
+	  <a href="javascript:void(0)" class="qwew">广州出发</a>
+	  <a href="javascript:void(0)" class="qwew">深圳出发</a>
+	  <a href="javascript:void(0)" class="qwew">天津出发</a>
+	  <a href="javascript:void(0)" class="qwew">厦门出发</a>
+	  <a href="javascript:void(0)" class="qwee">更多&gt;&gt;</a>
+	  </div>
+	  <div id="huochepiao">
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_01.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_02.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_03.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_04.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_05.png"></a>
+	  <a href="javascript:void(0)" class="card_fly"><img src="第二部分imgs/feijipiao_06.png"></a>
+	  </div>
+	  <div id="leader">                                   <!-- 旅游指南 -->
+	  <a href="javascript:void(0)" class="leader">旅游指南</a>
+	  </div>
+	  <ul id="leader_lead">
+	  <li><a href="javascript:void(0)">小朋友超爱的三亚酒店</a>
+	  
+	  </li>
+	  <li><a href="javascript:void(0)">7条航线带你"邮"世界</a></li>
+	  <li><a href="javascript:void(0)">盘点国内52处世界遗产</a></li>
+	  <li><a href="javascript:void(0)">青岛七星酒店住一晚</a></li>
+	  </ul>
+	  <img src="第二部分imgs/17072891.jpg" id="leader_show">
+	  <div id="right_leader">
+	  <a href="javascript:void(0)"><img src="第二部分imgs/17072895.jpg"></a>
+	  <a href="javascript:void(0)"><img src="第二部分imgs/17072896.jpg"></a><br>
+	  <a href="javascript:void(0)" class="right_leader_a">探秘海岛，赵薇在象岛开的中餐厅</a>
+	  <a href="javascript:void(0)" class="right_leader_a">毛里求斯，海誓山盟</a>
+	  </div>
+	  <div id="_siblings">
+	  <ul >
+	  <li>
+	  <i class="wasd1"></i>
+	  <span class="wasd">全球75万家酒店</span>
+	  </li>
+	  <li>
+	   <i class="wasd2"></i>
+	  <span class="wasd">订酒店返现金高达20%</span>
+	  </li>
+	  <li>
+	   <i class="wasd3"></i>
+	  <span class="wasd">国际酒店8折起</span>
+	  </li>
+	  <li>
+	   <i class="wasd4"></i>
+	  <span class="wasd">7×24小时服务</span>
+	  </li>
+	  </ul>
+	  </div>
+	  <div id="_emails">
+	  <div id="_emails_left" >
+	  </div>
+	  <div id="_email_center">
+	  <span id="_emails_kiss">亲，留下您的邮箱，会有惊喜呦~</span>
+	  <input type="text" value="请输入您的E-mail" onfocus="this.value=''" id="_email_input">
+	  <a href="javascript:void(0)" id="_emails_rightnow">立即订阅</a>
+	  </div>
+	  <div id="_emails_right" align="right"> 
+	  <a href="javascript:void(0)">艺龙服务协议</a>
+	  </div>
+	  </div>
+	  <div id="_bottom_contants">                                <!--底部链接-->
+	  <ul>
+	  <li><span class="_bottom_shift_">|</span><span class="bottom_markings">加盟合作</span><br>
+	  <a href="javascript:void(0)">酒店加盟</a><br>
+	  <a href="javascript:void(0)">开放平台</a><br>
+	  <a href="javascript:void(0)">代理合作</a><br>
+	  <a href="javascript:void(0)">广告服务</a><br>
+	  <a href="javascript:void(0)">商家中心</a>
+	  </li>
+	  <li><span class="_bottom_shift_">|</span><span class="bottom_markings">关于艺龙</span><br>
+	  <a href="javascript:void(0)">酒店大全</a><br>
+	  <a href="javascript:void(0)">国际酒店</a><br>
+	  <a href="javascript:void(0)">校园招聘</a><br>
+	  <a href="javascript:void(0)">联系我们</a><br>
+	  </li>
+	  <li><span class="_bottom_shift_">|</span><span class="bottom_markings">艺龙APP下载</span><br>
+	  <img src="第二部分imgs/icon2015-0_01.png">
+	  </li>
+	  <li><span class="_bottom_shift_">|</span><span class="bottom_markings">艺龙官方微信</span><br>
+	  <img src="第二部分imgs/icon2015-0_02.png">
+	  </li>
+	  <li><span class="_bottom_shift_">|</span><span class="bottom_markings">艺龙官方小程序</span><br>
+	  <img src="第二部分imgs/icon2015-0_03.png">
+	  </li>
+	  </ul>
+	  </div><br><br><br><br><br><br><br><br><br>
+	  <span id="buttom_info">© 1999 - 2017 艺龙网信息技术（北京）有限公司, eLong, Inc or its affiliates. All Rights Reserved. 京ICP证010011号 京公网安备11010502026059号</span>
+	  <div id="buttom_buttom" align="center">
+	  <a href="javascript:void(0)"><img src="第二部分imgs/icon2015-0_01_buttom_01.png"></a>
+	  <a href="javascript:void(0)"><img src="第二部分imgs/icon2015-0_01_buttom_02.png"></a>
+	  <a href="javascript:void(0)"><img src="第二部分imgs/icon2015-0_01_buttom_03.png"></a>
+	  <a href="javascript:void(0)"><img src="第二部分imgs/icon2015-0_01_buttom_04.png"></a>
+	  <a href="javascript:void(0)"><img src="第二部分imgs/icon2015-0_01_buttom_05.png"></a>
+	  <a href="javascript:void(0)"><img src="第二部分imgs/icon2015-0_01_buttom_06.png"></a>
+	  </div>
+	  <div id="buttomest">
+	  <a href="javascript:void(0)">酒店预订</a>
+	  <a href="javascript:void(0)">机票查询</a>
+	  <a href="javascript:void(0)">酒店团购</a>
+	  <a href="javascript:void(0)">热门城市</a>
+	  <a href="javascript:void(0)">合作伙伴</a>
+	  <a href="javascript:void(0)">常见酒店</a>
+	  </div>
+	  </body>
+  </html>

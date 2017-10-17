@@ -1,0 +1,217 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>下拉框.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    
+<style type="text/css">
+#beijing{
+background-image: url("材料/changecity_bg.png");
+width: 1200px;
+height: 250px;
+position:absolute;
+top: 80px;
+left: 150px;
+background-size:cover;
+}
+#logo{
+position: absolute;
+top:-20px;
+left: -70px;
+}
+#bangbang{
+width:180px;
+height:180px;
+position: absolute;
+top: 70px;
+left: 180px;
+}#logo1{
+color:white;
+font-size: 30px;
+font-weight: bold;
+margin: 20px;
+position: relative;
+top: 8px;
+}
+#logo2{
+color:white;
+font-size: 16px;
+font-weight: bold;
+position: relative;
+top: 2px;
+left: -15px;
+}
+#logo3{
+width: 250px;
+height: 50px;
+background-color: #FF552E;
+position: absolute;
+top: 170px;
+left: 600px;
+}
+.q1{
+font-size: 22px;
+}
+#city{
+position: absolute;
+top: 250px;
+left: 595px;
+}
+#choose{
+position: absolute;
+top: 400px;
+left: 50px;
+}
+#sousuo{
+border: 1px gray solid;
+}
+.qwe{
+color:#9B9B9B;
+font-size: 20px;
+}
+#remen1{
+color: #FF552E;
+font-size: 24px;
+font-weight: bold;
+}
+#remen{
+position: absolute;
+top: 350px;
+left: 50px;
+}
+</style>
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+  /*$(function(){
+	  $("#city1").change(function(){
+	  $("#city1 option").each(function(i){
+		  for(var i=0;i<=option.length;i++){
+			  var optionval=$("option").val();
+			 if(optionval){
+				 $("select[id='city2']").html();
+			 }
+		  }
+		  if($(this).attr('selected')){
+			  $(".cityyy").hide();
+			  $(".cityyy").eq(i).show();
+		  }
+	  })
+  })
+  $("#city1").change();
+   })*/
+   $(function(){
+	  $("#province").change(function(){
+		 var option_DOM= $("#province option").toArray();
+		 for(var i=0;i<option_DOM.length;i++){
+			/* alert(option_DOM)*/
+			 if(option_DOM[i].selected){
+			  $(".city").hide();
+			  $(".city").eq(i).show();
+			  }
+		 }
+	    /*$("#province option").each(function(i){
+	    if($(this).attr("selected")){
+	    	alert(i)
+	  $(".city").hide();
+	  $(".city").eq(i).show();
+	  }
+	});*/
+	});
+});
+  </script>
+  
+  </head>
+  
+  <body>
+  <div id="beijing" align="center">
+  <img src="材料/changecity_logo.png" id="logo">
+  <img src="材料/changecity_bangbang.png" id="bangbang"></img>
+  </div>
+  <img src="材料/changecity_down.png"></img>
+  <div id="logo3">
+  <span id="logo1">运城房产信息</span><span id="logo2">>></span>
+  </div>
+  <div id="city">
+  <span class="q1">周边城市推荐</span>
+  <span class="q1">运城</span>
+  <span class="q1">临淇</span>
+  <span class="q1">三门峡</span>
+  <span class="q1">渭南</span>
+  <span class="q1">洛阳</span>
+  <span class="q1">临汾</span>
+  <span class="q1">晋城</span>
+  </div>
+  <div id="choose">
+ <!--
+ 城市选择：
+<select id="prov" onchange="provChange()">
+<option value="none">省份</option>
+</select>
+<select id="city1">
+<option>城市</option>
+</select>
+-->
+级联下拉框<br>
+城市选择：
+<select id="province">
+<option>请选择省份</option>
+<option>湖南</option>
+<option>广东</option>
+<option>广西</option>
+<option>北京</option>
+</select>
+<select class="city">
+<option>请选择城市</option>
+</select>
+<select class="city" style="display: none;">
+<option>长沙</option>
+<option>株洲</option>
+<option>张家界</option>
+</select>
+<select class="city" style="display: none;">
+<option>广州</option>
+<option>佛山</option>
+<option>深圳</option>
+</select>
+<select class="city" style="display: none;">
+<option>广西</option>
+<option>佛山</option>
+<option>深圳</option>
+</select>
+<select class="city" style="display: none;">
+<option>北京</option>
+<option>佛山</option>
+<option>深圳</option>
+</select>
+
+直接搜索：<input type="text"><span id="sousuo">搜索</span>
+ </div>
+ <div id="remen">
+ <span id="remen1">热门城市</span>
+ <span class="qwe">石候</span>
+ <span class="qwe">霍州</span>
+ <span class="qwe">太原</span>
+ <span class="qwe">北京</span>
+ <span class="qwe">上海</span>
+ <span class="qwe">广州</span>
+ <span class="qwe">深圳</span>
+ <span class="qwe">杭州</span>
+ <span class="qwe">南京</span>
+ <span class="qwe">天津</span>
+ <span class="qwe">山里</span>
+ <span class="qwe">...</span>
+ </div>
+  </body>
+</html>
+
+
+
+
+
+

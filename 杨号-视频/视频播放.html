@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>视频播放.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+<style type="text/css">
+*{
+margin: 0px;
+padding: 0px;
+border:0px;
+}
+ body{
+background-image: url("bgimage_show789456.png");
+background-repeat: no-repeat;
+background-size:cover;
+} 
+#video1{
+position: relative;
+top: 400px;
+}
+#all_anniu{
+margin-top: 20px;
+position: relative;
+left:-10px;
+top: 400px;
+}
+a img{
+width: 45px;
+height: 45px;
+display: inline-block;
+border-radius:15px;
+margin-left: 5px;
+}
+#coll{
+  width:10px;
+  height:110px;
+  border-radius:30px;
+  background-color: gray;
+  }
+  #call{
+  width:15px;
+  height:15px;
+  border-radius:15px;
+  background-color: red;
+  position: relative;
+  left: -2px;
+  }
+   #voice{
+  position: absolute;
+  left: 865px;
+  top: 572px;
+  display: none;
+  z-index: 1;
+  } 
+  #dragbar{/*进度条位置  */
+position: absolute;
+left: 700px;
+top: 670px;
+width: 500px;
+}
+/* 设置进度条样式
+1.去除系统默认的样式；
+2.给滑动轨道(track)添加样式；
+3.给滑块(thumb)添加样式；
+*/
+input[type=range] {
+    -webkit-appearance: none;
+    width: 300px;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+} 
+input[type=range]::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    background: orange; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}   
+#running_voice{
+position: absolute;
+left: 750px;
+top: 700px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	 var myVideo=document.getElementById("video1"); /* 播放 */
+     $("#play").click(function(){                                           /* 音频是否播放 */
+   	  if (myVideo.paused) {
+  		   myVideo.play(); 
+  		 $(this).attr("src","58_play.png");
+  		dragBarChangeTime=setInterval(function(){
+    		dragbar.value=myVideo.currentTime;
+    	},1000); 
+  		/* clearInterval(dragBarChangeTime);  */
+  		}else {
+  			myVideo.pause();
+  			$(this).attr("src","58_stop.png");
+  			clearInterval(dragBarChangeTime);
+  			} 
+	});
+     $("#go").click(function(){/* 前进 */
+   	  myVideo.currentTime+=1;
+     });
+     $("#back").click(function(){/* 后退 */
+   	  myVideo.currentTime-=1;
+     });
+     $("#stop").click(function(){/* 暂停 */
+   		myVideo.pause(); 
+   		$("#play").attr("src","58_stop.png");
+     });
+     $("#quickily").click(function(){/* 加速 */
+ 		myVideo.playbackRate+=0.5; 
+ 		 myVideo.currentTime=dragbar.value;
+   });
+     $("#slow").click(function(){/* 减速 */
+   		myVideo.playbackRate-=0.5; 
+     });
+     $("#renew").click(function(){/* 恢复最初播放速度 */
+ 		myVideo.playbackRate=1; 
+   });
+    var voice_val=document.getElementById("running_voice");
+   var up_down=myVideo.volume*10;/* 获取音量的up和down */
+     $("#up").click(function(){                                     /* 加减音量 */
+   	  if( myVideo.volume==1){
+         alert("已经是最大音量了！"); 
+   	  }else{
+   	  myVideo.volume+=0.1;
+  	 voice_val.value= myVideo.volume*100; 
+   	  $("#call").animate({"top":"-=10"},0);  
+   	  }
+     });
+     $("#down").click(function(){
+   	  if(myVideo.volume>0.1){
+   		  myVideo.volume-=0.1;
+   		  voice_val.value= myVideo.volume*100;  
+       	  $("#call").animate({"top":"+=10"},0); 
+       }else if(myVideo.volume==0){
+    	   $("#up").attr("src","58_voice_novoice.png")  
+       }
+   	  });
+     $("#voicing,#voice").hover(function(){
+   	  $("#voice").show();
+   	 },function(){
+   		 $("#voice").hide(); 
+   	 });
+     $("#all_screen").click(function(){
+   	  myVideo.webkitEnterFullscreen(); // webkit类型的浏览器
+ 		myVideo.mozRequestFullScreen();  // FireFox浏览器
+     });                                                                          
+     $("#running_voice").click(function(){
+    	 myVideo.volume=voice_val.value/100;
+         });
+     $("#dragbar").change(function(){
+    	 myVideo.currentTime=dragbar.value;
+		});
+     });
+     window.onload=function(){
+ 		document.getElementById("dragbar").max=document.getElementById("video1").duration;
+ 	}
+ 
+
+</script>
+  </head>
+     <body>
+     <center>
+     <video id="video1" width="500px" ondblclick="db_click()">                                                             <!-- 视频播放开始 -->
+     <source src="haozaizai.mp4" type="video/mp4" >
+     </video>
+     <br> <input id="dragbar" type="range" min="0" step="1" value="0" style="z-index: 1"><br>
+     <div id="all_anniu">
+       <a href="javascript:void(0)" ><img src="58_pre.png" id="back"></a> 
+      <a href="javascript:void(0)"><img src="58_stop.png"  id="play"></a>
+      <a href="javascript:void(0)" ><img src="58_next.png"  id="go"></a> 
+      <a href="javascript:void(0)" ><img src="58_voice_novoice.png" id="voicing" ></a> 
+      <a href="javascript:void(0)" ><img src="01045_stop_stop.png" id="stop" width="67px"></a> 
+      <a href="javascript:void(0)" ><img src="58_slow.png" id="slow"></a> 
+      <a href="javascript:void(0)" ><img src="58_quick.png" id="quickily"></a> 
+      <a href="javascript:void(0)" ><img src="listening_icon.gif" id="renew" width="67px"></a> 
+      <a href="javascript:void(0)"  id="all_screen"> <img src="all_screen.png"></a> 
+      </div>
+      <div id="voice" align="center" style="display: none;"  >
+      <a href="javascript:void(0)" ><img src="58_voice_add.png" id="up" >
+     <div id="coll">
+     <div id="call" draggable="true" ondragstart="drag(event)" id="drag1"></div>
+     </div>
+     <a href="javascript:void(0)" ><img src="58_voice_noadd.png" id="down" >
+      </div>   
+                                                                                               <!-- 视频播放结束 -->
+        <input type="range" id="running_voice" value="100">; 
+           </center>                                                                             
+  </body>
+</html>

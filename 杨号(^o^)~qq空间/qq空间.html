@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>qq空间.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+body{
+background-image: url("bg.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+}
+#logo{
+position: absolute;
+top: 180px;
+left: 480px;
+}
+#enjoylife{
+color: #949398;
+font-size: 19px;
+position: absolute;
+top: 250px;
+left: 510px;
+}
+#neirong{
+width: 418px;
+height: 319px;
+position: absolute;
+top: 260px;
+left: 960px;
+background-color: #FFFFFF;
+border-radius:6px;
+}
+.logo_botton{
+position:relative;;
+top: 688px;
+left: 665px;
+margin-left: 53px;
+text-decoration: none;
+}
+.wenzi{
+color:white;
+position: relative;
+top: 15px;
+left: -40px;
+}
+.botton{
+text-decoration: none;
+color: white;
+font-size: 14px;
+margin-left: 5px;
+position: relative;
+top: 713px;
+left: 600px;
+}
+#botton_2005{
+color: white;
+font-size: 14px;
+position: relative;
+top: 723px;
+left: 700px;
+}
+#botton_2014{
+color: white;
+font-size: 14px;
+position: relative;
+top: 743px;
+left: 400px;
+}
+.denglu{
+text-decoration: none;
+color: #444444;
+font-size: 25px;
+margin-left: 50px; 
+}
+#top{
+border-bottom: 1px gray solid;
+width: 415px;
+height: 65px;
+padding-top:10px;
+}
+#fankui{
+color:#9F9F9F;
+position: absolute;
+top:200px; 
+left: 10px;
+}
+#center_erweima{
+width: 180px;
+height: 204px;
+text-align: center;
+position: relative;
+top:20px;
+left: 110px;
+
+}
+#anquandenglu{
+color: black;
+font-size: 14px;
+font-weight: bold;
+}
+#erweima_denglu{
+width:150px;
+height:150px;
+border: 1px gray solid;
+position: relative;
+top: 10px;
+}
+.info{
+color:gray;
+font-size:20px;
+width:300px;
+height: 50px;
+margin-top: 20px;
+margin-left: 60px;
+}
+#load{
+border-radius:6px;
+width: 120px;
+height: 40px;
+text-align: center;
+padding-top: 0px;
+background-color: #75CB1B;
+position: absolute;
+top: 230px;
+left: 60px;
+
+}
+#load_1{
+color:#FFFFFF;
+font-size: 30px;
+font-weight: bold; 
+
+}
+.fankui_1{
+color:#9F9F9F;
+position: relative;
+top: 80px;
+left: 150px;
+}
+#ee1{
+width:250px;
+height:18px;
+position: absolute;
+top: 75px;
+left: 60px;
+background-color: #FFF0AC;
+}
+#ee2{
+width:250px;
+height:18px;
+position: absolute;
+top: 146px;
+left: 60px;
+background-color: #FFF0AC;
+}
+</style>
+<script type="text/javascript">
+function cahnge(i){
+	var center_erweima=document.getElementById("center_erweima");
+	var mimadenglu=document.getElementById("mimadenglu");
+	if(i>0){
+		center_erweima.style.display="block"
+		mimadenglu.style.display="none"
+	}else{
+		mimadenglu.style.display="block"
+		center_erweima.style.display="none"
+	}
+	}
+ function w1(){
+	 var www=document.getElementById("ee1");
+    var ww=document.getElementById("e1");
+    var zhanghao=document.getElementById("zhang");
+    var haoval=zhanghao.value;
+    if(haoval==""|haoval.length==0){
+    	/*ww.innerHTML="账号不能为空！";
+    	ww.style.color="black";*/
+    	zhanghao.value="支持QQ号/邮箱/手机号登录";
+    	www.style.display="none";
+    	userCheckRS=false;
+    }else{
+    	var patt=/^[0-9]{6,12}$/;
+    	if(patt.test(haoval)){
+    		www.style.display="none";
+    		/*ww.innerHTML="OK!"
+    		ww.style.color="blue";*/
+    	userCheckRS=true;
+    	}else{
+    		ww.innerHTML="请输入正确的QQ账号！"
+    		ww.style.color="black";
+    		www.style.display="block";
+    	userCheckRS=false;
+    		}
+    }
+    }
+    function w2(){
+    var eee=document.getElementById("ee2");
+    var ee=document.getElementById("e2");
+    var mima=document.getElementById("mi");
+    var mival=mima.value;
+    if(mival==""|mi.length==0){
+    	/*ee.innerHTML="密码不能为空！";
+    	ee.style.color="black";*/
+    	mima.value="block"
+    	eee.style.display="none";
+    	passCheckRS=false;
+    }else{
+    	var patt=/^[0-9]{5,8}$/;
+    	if(patt.test(mival)){
+    		eee.style.display="none";
+    		/*ee.innerHTML="OK!"
+    		ee.style.color="blue";*/
+    	passCheckRS=true;
+    	}else{
+    		ee.innerHTML="请输入正确的密码！"
+    		ee.style.color="black";
+    		eee.style.display="block";
+    	passCheckRS=false;
+    		}
+    }
+    }
+    function test(){
+    	w1();
+    	w2();
+    	}
+   userCheckRS=false;
+	passCheckRS=false;
+	  /*图标浮动*/
+/*function swimming(kk){             
+	var swim=document.getElementById(a+"kk");
+	for(var rr=1;rr<=5;rr++){
+		if(rr==kk){
+			swim.this.flagStr.split("");
+			
+		}
+	}
+	
+	
+}*/
+
+</script>
+  </head>
+  
+  <body>
+   <div>
+   <img src="logo.png" id="logo">
+   <span id="enjoylife">分享生活&nbsp;&nbsp;&nbsp;留住感动</span>
+   </div>
+   <div id="neirong">   <!--登陆内容-->
+   <div id="top">
+   <a href="javascript:void(0)" class="denglu" onclick="cahnge(1)"><span>快速登录</span></a>
+   <a href="javascript:void(0)" class="denglu" onclick="cahnge(-1)"><span>账号密码登陆</span></a>
+   </div>
+   <div id="center_erweima" >
+   <span id="anquandenglu">安全登录防止被盗</span>
+   <img src="erweima.png" id="erweima_denglu">
+   <div id="fankui">
+   <span>注册新账号</span>
+   <span>|</span>
+   <span>意见反馈</span>
+   </div>
+   </div>
+   <div id="mimadenglu" style="display: none;">
+   <input type="text" value="支持QQ号/邮箱/手机号登录" onfocus="this.value=''" class="info" id="zhang" onblur="w1()"><br>
+   <div id="ee1" style="display: none"><span id="e1"></span></div>
+    <input type="password" value="密码密码密码" onfocus="this.value=''" class="info" id="mi" onblur="w2()">
+    <div id="ee2" style="display: none"><span id="e2"></span></div>
+   
+   <div id="load">
+   <a href="#" style="text-decoration: none;" onclick="return test()"          ><span id="load_1" >登录</span></a>
+   </div>
+   <div>
+   <span class="fankui_1">忘记密码？</span><span class="fankui_1">|</span>
+   <span class="fankui_1">注册新账号</span><span class="fankui_1">|</span>
+   <span class="fankui_1">意见反馈</span>
+   </div>
+   </div>
+   </div>
+  <div>
+  <a href="" class="logo_botton" onmouseover="swimming(1)" id="a1"><img src="pingguo.png.png"><span class="wenzi">ipone</span></a> 
+  <a href="" class="logo_botton" onmouseover="swimming(2)" id="a2"><img src="ipad.png.png"><span class="wenzi">ipad</span></a> 
+  <a href="" class="logo_botton" onmouseover="swimming(3)" id="a3"><img src="andio.png.png"><span class="wenzi">Android</span></a> 
+  <a href="" class="logo_botton" onmouseover="swimming(4)" id="a4"><img src="huibiao.png.png"><span class="wenzi">Windows phone</span></a> 
+  <a href="" class="logo_botton" onmouseover="swimming(5)" id="a5"><img src="shouji.png.png"><span class="wenzi">其他手机</span></a> 
+  </div>
+  <div>
+  <a href="" class="botton"><span>反馈建议</span><span >|</span></a>
+  <a href="" class="botton"><span>官方空间</span><span>|</span></a>
+  <a href="" class="botton"><span>空间活动</span><span>|</span></a>
+  <a href="" class="botton"><span>空间应用</span><span>|</span></a>
+  <a href="" class="botton"><span> 腾讯原创馆</span><span>|</span></a>
+  <a href="" class="botton"><span>QQ互联</span><span>|</span></a>
+  <a href="" class="botton"><span>QQ登录</span><span>|</span></a>
+  <a href="" class="botton"><span>社交组件 </span><span>|</span></a>
+  <a href="" class="botton"><span> 应用侵权投诉</span><span>|</span></a>
+  <a href="" class="botton"><span>Complaint Guidelines</span></a>
+ </div>
+ <span id="botton_2005">Copyright © 2005 - 2017 Tencent.All Rights Reserved.</span>
+ <span id="botton_2014">腾讯公司 版权所有 粤网文[2014]0633-233号</span>
+  </body>
+</html>

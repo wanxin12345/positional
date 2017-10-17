@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>下拉菜单.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <style type="text/css">
+    *{ /* 清除默认值 */
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    }
+    #divTab{/* 控制整个导航栏的页面位置 */
+    padding: 20px;
+    }
+    #tab a{ /* 导航条中每项都使用浮动 ,每项都省略标识符号*/
+    list-style-type: none;
+    float: left;
+    }
+    #tab a{/* 设置每个选项的样式  */
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0px;
+    background-color: blue;
+    border: 1px gray solid;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    }
+    #tab a:hover{/* 设置鼠标悬停在选项上的样式 */
+    background-color: #A0B9E1;
+    border-bottom-color: #55A0FF;
+    }
+    
+    #subMenu{/* 设置整个子菜单显示空间 及提供子菜单移动参考 */
+    width:488px;
+    clear: both;
+    position: relative;
+    top:0px;
+    }
+    #subMenu li{  /* 设置每项的标识省略 */
+    list-style-type: none;
+    }
+    #subMenu li a{ /* 设置每项的样式 */
+   	display: inline-block;
+    width: 120px;
+    padding: 10px 0px;
+    background-color: #55A0FF;
+    border: 1px gray solid;
+    border-radius:5px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    }
+    #subMenu li a:hover{
+    background-color: #A0B9E1;
+    }
+  
+    #sub1{
+    position: absolute;
+    }
+    #sub2{
+    position: absolute;
+    left: 122px;
+    }
+    #sub3{
+    position: absolute;
+    left: 244px;
+    }
+    #sub4{
+    position: absolute;
+    left: 366px;
+    }
+    </style>
+  <script type="text/javascript">
+  $(function(){
+	 /* $("#tab a").hover(function(){
+	  $("#subMenu ul").eq($(this).index()).show();
+  },function(){
+	 $("#subMenu ul").eq($(this).index()).hide();  
+  })*/
+  $("#tab a").hover(function(){
+	  $("#subMenu ul").eq($(this).index()).toggle();
+  
+  })
+  
+  })
+  
+  </script>
+  </head>
+  
+  <body>
+    <div id="divTab">
+	    <div id="tab">
+		    <a href="#" id="t1" >HTML</a>
+			<a href="#" id="t2" >CSS</a>
+			<a href="#" id="t3" >JavaScript</a>
+			<a href="#" id="t4" >jQuery</a>
+		    </ul>
+	    </div>
+	    
+	    <div id="subMenu" >
+		    <ul id="sub1" style="display: none;" >
+		    <li><a href="#">HTML1</a></li>
+		    <li><a href="#">HTML2</a></li>
+		    <li><a href="#">HTML3</a></li>
+		    </ul>
+		    <ul id="sub2" style="display: none;" >
+		    <li><a href="#">CSS1</a></li>
+		    <li><a href="#">CSS2</a></li>
+		    </ul>
+		    <ul id="sub3" style="display: none;" >
+		    <li><a href="#">JavaScript</a></li>
+		    </ul>
+			<ul id="sub4" style="display: none;" >
+		    <li><a href="#">jQuery1</a></li>
+		    <li><a href="#">jQuery2</a></li>
+		    <li><a href="#">jQuery3</a></li>
+		    </ul>
+	    </div>
+    </div>
+   
+  </body>
+</html>

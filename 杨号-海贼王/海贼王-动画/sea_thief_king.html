@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sea_thief_king.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<style type="text/css">
+*{
+border: 0px;
+margin: 0px;
+padding: 0px;
+}
+#bg_show{
+background-image: url("imgs/bg.png");
+width: 860px;
+height: 865px;
+ overflow: hidden; 
+  animation:myfirst4 4s;  
+}
+#show_center{
+width: 733px;
+height: 758px;
+background-color:#E9E9E9;
+transform:rotate(-3deg); 
+position: relative;
+top: 60px;
+box-shadow: 3px 3px 3px 2px #9D8249;
+}
+@FONT-FACE {/*自定义文字  */
+          font-family: myfont;
+          src:url("fonts/jianzhi.ttf");
+}
+.title_show{
+font-family: myfont;/* 引用自定义文字 */
+color:#666666;
+display:inline-block;
+transform:rotate(3deg); 
+font-size: 35px;
+padding-left: 20px;
+position: relative;
+left: -150px;
+top: 20px;
+}
+#content_show{
+transform:rotate(3deg); 
+}
+#word_show a{/* 设置上方标识样式 */
+color:white;
+font-size:20px;
+font-weight:bold;
+display:inline-block;
+text-decoration: none;
+width: 95px;
+height: 30px;
+border-radius:10px;
+background-color: #FF6600;
+padding-top: 5px;
+position: relative;
+left: -5px;
+top: 70px;
+margin-left: 25px;
+ transition:0.1s; 
+}
+#word_show a:hover{
+/* width: 120px;
+height: 40px;
+font-size: 25px; *//* 进行边框放大会有震动 */
+transform:scale(1.4);/* 对标识进行缩放 */
+}
+#showpot img{
+width:400px;
+height:400px;
+text-decoration: none;
+position: relative;
+top: 150px;
+}
+ul li{
+list-style: none;
+}
+#black_pencil{
+position: absolute;
+left: 345px;
+top: -48px;
+  animation:myfirst4 4s;  
+}
+#top_redline{
+position: absolute;
+left:-15px;
+top: 120px;
+animation:myfirst3 3s;
+}
+#blue_redline{
+position: absolute;
+left:22px;
+top: 585px;
+animation:myfirst2 3s;
+}
+#bottom_bluepencil{
+position: absolute;
+left:688px;
+top: 575px;
+  animation:myfirst4 6s;  
+  animation-delay:2s; 
+}
+#right_three img{
+width:120px;
+height: 120px;
+transform:rotate(60deg);
+ animation:myfirst1 2s;  
+position: relative;
+top:-450px;
+left:300px;
+ transition:transform 1s; 
+/*  animation-delay:2s; */
+-moz-transition:-moz-transform 2s;
+-webkit-transition:-webkit-transform 2s;
+-o-transition:-o-transform 2s;
+}
+@keyframes myfirst1/* 规定三个图片动画，从右边旋转进入 */
+{
+from{left:520px;}
+to{transform: rotate(-300deg);left:300px;}
+/* 100%	{transform: rotate(-360deg);left:0px;} */
+}
+@keyframes myfirst2/* 规定红蓝线动画，从左边进入 */
+{
+from{left:-709px;}
+to{left:0px;}
+}
+@keyframes myfirst3/* 规定红线动画，从左边进入 */
+{
+from{left:-780px;}
+to{left:0px;}
+}
+@keyframes myfirst4/* 规定最外面的div */
+{
+from{opacity:0;}
+to{opacity:1;}
+}
+@keyframes myfirst5/* 规定内部div */
+{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	 /* 初始化图片，显示第一张，其他隐藏 */
+	  $("#showpot li:eq(0)").show().siblings().hide(); 
+	 $("#word_show a").click(function(){
+		j=$(this).index();
+          var img_DOM=$("#showpot img").toArray();
+		  for(var i=0;i<=img_DOM.length-1;i++){
+			 if(i==j){
+				 $("#showpot li").hide();
+				 $("#showpot li").eq(i).show();
+			}
+		} 
+	});/* 点击标识切换内容结束 */
+	
+	
+});
+
+</script>
+  </head>
+  
+  <body>
+  <center>
+   <div id="bg_show">
+   <div id="show_center">
+<span class="title_show">ONE</span><span class="title_show">PIECE</span>
+<img alt="铅笔" src="imgs/black_pencil.png" id="black_pencil">
+<div id="content_show">
+  <div id="word_show">
+  <a href="javascript:void(0)">首页</a>
+  <a href="javascript:void(0)">日志</a>
+  <a href="javascript:void(0)">相片</a>
+  <a href="javascript:void(0)">档案</a>
+  <a href="javascript:void(0)">留言</a>
+   </div>
+     <img alt="redline" src="imgs/top_redline.png" id="top_redline">
+   <div id="showpot"><!--标识下主要内容  -->
+   <ul ><!--需要切换的图片  -->
+   <li><img src="images/timg (2.jpg"></li>
+   <li><img src="images/timg (3) (1).jpg"></li>
+   <li><img src="images/timg (3).jpg"></li>
+   <li><img src="images/timg (4).jpg"></li>
+   <li><img src="images/timg (5).jpg"></li>
+   </ul>
+   </div>
+     <!--图片下红蓝双线  -->
+    <img alt="redline" src="imgs/blue_redline.png" id="blue_redline">
+      <img alt="redline" src="imgs/bottom_bluepencil.png" id="bottom_bluepencil">
+   </div>
+     </div>
+     <div id="right_three"><!--右边旋转三图  -->
+     <img src="images/鬼步21.jpg"><br>
+     <img src="images/鬼步22.jpg"><br>
+     <img src="images/鬼步24.jpg">
+     
+     </div>
+   </div>
+   </center>
+  </body>
+</html>

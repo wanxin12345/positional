@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>音频播放.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript" src="../jquery-1.6.4.min.js"></script>
+<style type="text/css">
+*{
+border:0px;
+margin: 0px;
+padding: 0px;
+}
+body{
+background-image: url("bgimage_show789456.png");
+background-repeat: no-repeat;
+background-size:cover;
+}
+#action{
+border:20px black solid;
+border-radius:30px;
+width: 1000px;
+height: 823px;
+}
+#song_show{
+ width: 805px; 
+height: 705px;
+}
+#sing_show{
+width: 200px;
+height: 700px;
+background-color: black;
+position: relative;
+top: -30px;
+}
+#sing_show ul li{
+list-style: none;
+margin-top: 30px;
+}
+#sing_show ul li a{
+text-decoration: none;
+font-size: 18px;
+font-weight: bold;
+}
+#song_sing_show{
+width: 800px;
+height: 800px;
+position: relative;
+top: -730px;
+left: 200px;
+}
+#song_sing_show img{
+width: 800px;
+height: 800px;
+}
+#button_group{
+width: 1000px;
+height: 70px;
+background-image: url("ex3o2.JPG");
+position: relative;
+left: 0px;
+top:20px;
+}
+#button_group img{
+width:60px;
+height: 60px;
+margin-left: 30px;
+margin-top: 7px;
+}
+#voice_add_down{
+width: 60px;
+height: 60px;
+}
+#add_voice{
+width: 15px;
+position: relative;
+left: -23px;
+top: -2px;
+}
+#down_voice{
+width: 15px;
+position:relative;
+left: -91px;
+top: -1px;
+}
+#voice_show{
+position: absolute;
+left: 770px;
+top: 780px;
+}
+#voice_words{
+color:red;
+font-size:20px;
+font-weight:bolder;
+background-color: white;
+width: 30px;
+height: 30px;
+display: inline-block;
+position: relative;
+left: -55px;
+top: -20px;
+text-align: center;
+padding-top: 5px;
+}
+#loading_gif{
+position: absolute;
+top: 730px;
+padding-left: 10px;
+}
+#dragbar{/*进度条位置  */
+position: absolute;
+left: 5px;
+top: 730px;
+width: 800px;
+}
+/* 设置进度条样式
+1.去除系统默认的样式；
+2.给滑动轨道(track)添加样式；
+3.给滑块(thumb)添加样式；
+*/
+input[type=range] {
+    -webkit-appearance: none;
+    width: 300px;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+} 
+input[type=range]::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    background: orange; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}   
+.qq1{
+color: white;
+}
+.qq2{
+color: orange;
+}
+</style>
+<script type="text/javascript"> 
+$(function(){
+	var myAudio=document.getElementById("song_play");
+	var dragbar=document.getElementById("dragbar");
+    $("#sing_show li a").attr("class","qq1");
+	$("#sing_show li").click(function(){
+	$("#sing_show li a").eq($(this).index()).attr("class","qq2").parent().siblings().children().attr("class","qq1");
+	alert("是否播放第"+($(this).index()+1)+"首歌")/* 弹出音乐清单索引 */
+	 $("#song_sing_show  source").attr("src","小豹推荐舞曲15 ("+($(this).index()+1)+").mp3");
+	$("#song_sing_show img").attr("src","鬼步img/鬼步"+($(this).index()+1)+".jpg");
+	myAudio.load();
+    $("#button_group img:eq(1)").attr("src","1129135610.png");
+    });
+	//点击快退
+	$("#button_group img:eq(0)").click(function(){
+		myAudio.currentTime-=5;
+		dragbar.value-=5;
+ })
+	//点击快进
+	$("#button_group img:eq(2)").click(function(){
+		myAudio.currentTime+=5; 
+		dragbar.value=dragbar.value-0+5;
+	});
+	//播放
+    $("#button_group img:eq(1),#sing_show li").click(function(){
+		if (myAudio.paused) {//暂停状态-->播放
+			myAudio.play();
+			$(this).attr("src","1129135610.png");   
+			dragBarChangeTime=setInterval(function(){
+	    		dragbar.value=myAudio.currentTime;
+	    	}, 1000);
+		/* 	$("#sing_show li a").eq($(this).index()).attr("class","qq2").parent().siblings().children().attr("class","qq1"); */
+			}else{//播放状态--->暂停
+			myAudio.pause();
+			$(this).attr("src","112913569.png");
+			clearInterval(dragBarChangeTime);
+       }
+	});
+	$("#button_group img:eq(3)").click(function(){
+	         myAudio.pause();
+		$("#button_group img:eq(1)").attr("src","112913569.png");
+	});
+	//控制音量
+	$("#voice_words").html(Math.round(myAudio.volume*10))
+	$("#voice_show #add_voice").click(function(){//+音量
+		$("#voice_words").html(Math.round(myAudio.volume*10));/* 控制台返回音量 */
+	myAudio.volume<0.9?myAudio.volume+=0.1:myAudio.volume=1;
+		});
+	$("#voice_show #down_voice").click(function(){//-音量
+     $("#voice_words").html(Math.round(myAudio.volume*10));/* 控制台返回音量 */
+			if(myAudio.volume>0.1){
+				myAudio.volume-=0.1
+			}
+		});
+			$("#button_group img:eq(4)").click(function(){
+				 if (myAudio.muted) {//静音-->非静音
+					 myAudio.muted=false; 
+					$("#button_group img:eq(4)").attr("src","yinliang _show.png");
+					$("#voice_words").html(Math.round(myAudio.volume*10));/* 控制台返回音量 */
+				} else {//正常--->静音
+					  myAudio.muted=true; 
+					$("#button_group img:eq(4)").attr("src","api_thumb_450.png");
+				} 
+			});
+			$("#dragbar").change(function(){
+	  			myAudio.currentTime=dragbar.value;
+	  		});
+  });
+  window.onload=function(){
+		document.getElementById("dragbar").max=document.getElementById("song_play").duration;
+	}
+  /* 实现进度条拖拽失败！哈哈哈哈 */
+ $(function(){
+ $("#dragbar").live({
+    		dragstart:function(e){
+    			cc=e.pageX;
+    		 },
+			drag:function(e){
+    			 e.preventDefault();
+    			 if(e.pageX<(cc-0+380)&&e.pageX>cc){
+    				 $(this).css({"position":"absolute","left":e.pageX})
+    			 }
+    		 },
+			dragend:function(e){
+				 e.preventDefault();
+    			 $(this).css({"position":"absolute","left":e.pageX})
+    		 }
+    		 });
+    	 }) 
+
+
+</script>
+  </head>
+  <body>
+  <div id="action">
+   <div id="song_show"><!-- 音乐歌单歌词等显示 -->
+   <div id="sing_show">  <!-- 歌单列表显示 -->
+   <ul>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (1)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (2)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (3)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (4)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (5)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (6)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (7)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (8)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (9)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (10)</a></li>
+   <li><a href="javascript:void(0)">小豹推荐舞曲15 (11)</a></li>
+   </ul>
+   </div>
+   <div id="song_sing_show"><!-- 歌词显示 -->
+   <img src="鬼步img/鬼步1.jpg">
+   <audio id="song_play" >
+   <source src="小豹推荐舞曲15 (1).mp3"  class="qqa" >
+   </audio>
+   <br> <input id="dragbar" type="range" min="0" step="1" value="0" style="z-index: 1"><br>
+    </div>
+   </div>
+   <div id="button_group" align="center">                                             <!-- 切换按钮 -->
+   <a href="javascript:void(0)"><img src="1129135612.png" onItemclick="pre()"></a><!-- 上一首/快退 -->
+   <a href="javascript:void(0)"><img src="112913569.png" onItemclick="nex()"></a><!-- 下一首/快进 -->
+   <a href="javascript:void(0)"><img src="1129135613.png"></a><!-- 播放/暂停切换 -->
+   <a href="javascript:void(0)"><img src="1129135611.png"></a><!-- 从头开始播放 -->
+    <a href="javascript:void(0)"><img src="yinliang _show.png"></a><!-- 静音 -->
+   </div>
+   <div id="voice_show">
+   <a href="javascript:void(0)"><img src="volume-adjustment-symbol_318-43591.jpg" id="voice_add_down"></a><!-- 音量 -->
+   <a href="javascript:void(0)"><img src="C-_Users_yh_Desktop_volume-adjustment-symbol_318-43591.png" id="add_voice"></a>
+   <a href="javascript:void(0)"><img src="C-_Users_yh_Desktop_volume-adjustment-symbol_318-43592.png" id="down_voice"></a>
+   <span id="voice_words"></span><!-- 音量显示 -->
+   </div>
+   <div id="loading_gif">
+   <img src="鬼步img/loading.gif" width="30px;">
+   <img src="鬼步img/loading.gif" width="30px;">
+   <img src="鬼步img/loading.gif" width="30px;">
+   <img src="鬼步img/loading.gif" width="30px;">
+   <img src="鬼步img/loading.gif" width="30px;">
+   </div>
+   </div>
+  </body>
+</html>

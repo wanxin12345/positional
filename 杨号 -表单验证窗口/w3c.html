@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>w3c.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+ <style>
+           *{border:0px;margin:0px;padding: 0px;}
+          
+           #shangfang{
+           height:63px;
+           background-color: orange;
+           border-bottom:1px #B3B3B3 solid;
+           padding-top: 16px;
+           }
+           #logo{
+           width: 215px;
+           height:48px;
+           background-image: url("header-logo.png");
+           margin-left: 60px;
+           }
+           #bodydiv{
+           background-color:#F9F9F9;
+           padding-top: 81px;
+           }
+             #logindiv{
+             width: 598px;
+             height:700px;
+             border:1px #DDDDDD solid;
+             border-radius:4px;
+             background-color: white;
+             }
+             #regeset{
+             width:518px;
+             height:30px;
+             border-bottom:1px #DDDDDD solid;
+             margin-top: 32px;
+             padding-bottom:5px;
+             }             
+             #regeset h2{
+             float: left;
+             font-weight: normal;
+             font-size: 22px;
+             }
+             #regeset a{
+             float: right;
+             margin-top: 5px;
+             font-size: 14px;
+             text-decoration: none;
+             color:#900b09;
+             }
+             #inputdiv{
+             font-size: 15px;
+             color: #666666;
+             margin-left: 20px;
+             }
+             .inputtext{
+             width:265px;
+             height:38px;
+             border:1px #DDDDDD solid;
+             border-radius:5px;
+             display:inline-block;
+             padding: 0px 10px;
+             outline: 0;
+             position:relative;
+             top: -2px;
+             left:-7px;
+             }
+             .setdistance{
+             margin-top: 29px;
+             }
+             .setdistance span{
+             padding: 0px 6px;
+             font-size: 13px;
+             color: #ff0000;
+             font-family: '黑体';
+             position: relative;
+             left:-7px;
+             }
+             #huadong{
+             margin: 16px 0px 0 31px;
+             }
+             #suretext{
+             width:420px;
+             height:20px
+             }
+             #suretext,#suretext span{margin-top: 24px;
+             font-size: 13px;
+             font-family: Verdana, Arial, Helvetica, sans-serif;
+             text-align: left;
+             cursor: pointer;
+             }
+             #suretext a span{
+             color:#900b09;
+             }
+             #suretext input{
+             cursor: pointer;
+             }
+             #quick{
+             width: 400px;
+             height: 20px;
+             border-radius:5px;
+             background-color:red;
+             margin:20px 20px 0px 0px;
+             padding:10px 0px;
+             font-size: 16px;
+             color:white;
+             cursor: pointer;
+             }
+             #sign{
+             width:200px;
+             height: 0px;
+             }
+             #thirdlogin{
+             margin-top: 20px
+             }
+             #iconlogin{
+             width: 240px;
+             height:32px;
+             margin-top: 10px
+             }
+             .hr{
+             width:120px;
+             height:1px;
+             border:none;
+             border-top:1px #DDDDDD solid;
+             display:inline-block;
+             }
+             #QQ{
+             background-image: url("qq.png");
+             background-repeat: no-repeat;
+             cursor: pointer;
+             }
+             #QQ:HOVER{
+             background-image: url("i_qq.png");
+             background-repeat: no-repeat;
+             cursor: pointer;
+             }
+             #weixin{
+             background-image: url("weixin.png");
+             background-repeat: no-repeat;
+             cursor: crosshair;
+             }
+             #weixin:HOVER{
+             background-image: url("i_weixin.png");
+             background-repeat: no-repeat;
+             cursor: crosshair;
+             }
+             #weibo{
+             background-image: url("weibo.png");
+             background-repeat: no-repeat;
+             cursor: pointer;
+             position: absolute;
+             top: 830px;
+             left: 820px;
+             }
+             #weibo:HOVER{
+             background-image: url("i_weibo.png");
+             background-repeat: no-repeat;
+             cursor: pointer;
+             }
+             #weiw1{
+           position: absolute;
+            top: 830px;
+             left: 850px;
+           }
+             .thirdspan{
+             position: relative;
+             height: 35px;
+             line-height: 35px;
+             font-size: 14px;
+             color: #666;
+             text-align:center;
+              }
+             .quickint{ 
+              float:left;
+              width: 32px;
+              height:32px;
+              }
+             .quickint1{
+             float:left;
+             color:#666666;
+             position: relative;
+             top: 5px;
+             }
+             .inputtext:FOCUS{
+             border-color: #999999;
+             }
+           #footdiv{
+           height:20px;
+           margin: 100px 0px 30px 0px;
+           text-align: center;
+           }
+           #footdiv a{
+           text-decoration: none;
+           color:#900b09;
+           }
+           
+           
+    </style>
+    
+    
+    <script type="text/javascript">
+    
+                
+            function qqw(){
+            	var youxiang=document.getElementById("qq1");
+            	var tishi1=document.getElementById("email");
+            	tival=tishi1.value;
+            	if(tival==""|tival.length==0){
+            		youxiang.innerHTML="邮箱信息不能为空！";
+            		youxiang.style.color="red";
+            		youxiangRS=false;
+            	}else{
+    	var patt=/^\w+([._]\w+)*@\w+[.]\w+$/;
+    	if(patt.test(tival)){
+    		youxiang.innerHTML="OK!"
+    		youxiang.style.color="yellow";
+    	
+    	youxiangRS=true;
+    	}else{
+    		youxiang.innerHTML="邮箱账号输入方式不对！"
+    		youxiang.style.color="red";
+    	
+    	youxiangRS=false;
+    		}
+    }
+            	
+            	
+            } 
+             function qqe1(){
+            	var mima=document.getElementById("qq2");
+            	var tishi2=document.getElementById("setpass");
+            	ti2val=tishi2.value;
+            	if(ti2val==""|ti2val.length==0){
+            		mima.innerHTML="密码信息不能为空！";
+            		mima.style.color="red";
+            		mimaRS=false;
+            	}else{
+    	var patt=/^[0-9]{8,15}$/;
+    	if(patt.test(ti2val)){
+    		mima.innerHTML="OK!"
+    		mima.style.color="yellow";
+    	
+    	mimaRS=true;
+    	}else{
+    		mima.innerHTML="密码输入方式不对！"
+    		mima.style.color="red";
+    	
+    	mimaRS=false;
+    		}
+    }
+            	}
+              function qqe2(){
+            	var mima1=document.getElementById("qq3");
+            	var tishi3=document.getElementById("surepass");
+            	ti3val=tishi3.value;
+            	if(ti3val==""|ti3val.length==0){
+            		mima1.innerHTML="密码信息不能为空！";
+            		mima1.style.color="red";
+            		mima1RS=false;
+            	}else{
+    	var patt=/^[0-9]{8,15}$/;
+    	if(patt.test(ti3val)){
+    		mima1.innerHTML="OK!"
+    		mima1.style.color="yellow";
+    	
+    	mima1RS=true;
+    	}else{
+    		mima1.innerHTML="密码输入方式不对！"
+    		mima1.style.color="red";
+    	
+    	mima1RS=false;
+    		}
+    }
+            	var pass1=document.getElementById("setpass").value;
+                var pass2=document.getElementById("surepass").value;
+                    
+                    if(pass1==pass2==null){
+                        document.getElementById("qq4").innerHTML="密码不能为空";
+                    }else if(pass1===pass2){
+                    	document.getElementById("qq4").innerHTML="密码一致";
+                    }else{
+                    	document.getElementById("qq4").innerHTML="密码不一致,请重新输入";
+                    }
+                    mima1RS=false;
+            	}
+            youxiangRS=false;
+            mimaRS=false;
+            mima1RS=false;
+    </script>
+
+  </head>
+  
+  <body>
+   <div id="shangfang"><div id="logo"></div></div>
+       
+       <div id="bodydiv" align="center">
+       <div id="logindiv">
+       <div id="regeset"><h2>注册</h2><a href="#">已有账号，马上登录</a></div><form action="">
+       <div id="inputdiv">
+       <div class="setdistance">
+      &nbsp;&nbsp;&nbsp;邮箱 <span>&nbsp;</span>   
+       <input type="text"  id="email" class="inputtext" placeholder="邮箱" onblur="qqw()"><br>
+       <span id="qq1"></span>
+       </div>
+       <div class="setdistance">
+                        设置密码 <span>&nbsp;</span> 
+       <input type="password" id="setpass" class="inputtext" placeholder="设置密码" onblur="qqe1()"><br>
+       <span id="qq2"></span>
+       </div>
+       <div class="setdistance">
+                        确认密码<span>&nbsp;</span>
+        <input type="password" id="surepass" class="inputtext" placeholder="确认密码" onblur="qqe2()"><br>
+        <span id="qq3"></span><br>
+        <span id="qq4"></span>
+        </div>
+      
+       <div id="huadong"><img src="huadong.png"></div>
+       <div id="suretext">
+       <input type="checkbox" onclick="suretext()"> <span>我已阅读并同意</span><a><span>《用户注册协议》</span></a></div>
+       <div id="quick"><span>立即注册</span></div>
+       <div id="thirdlogin">
+       <hr class="hr" />&nbsp; <span class="thirdspan">第三方账号登录</span>&nbsp; <hr class="hr" /></div>
+       </div></form>
+       <div id="iconlogin">
+       <div id="QQ" class="quickint"></div>
+       <span class="quickint1">QQ&nbsp;&nbsp;</span>
+       <div id="weixin" class="quickint"></div>
+       <span class="quickint1">微信&nbsp;&nbsp;</span>
+       <div id="weibo" class="quickint"></div>
+       <span class="quickint1" id="weiw1">微博</span></div>
+       </div>
+       </div>
+       
+       <div id="footdiv" >
+       Copyright © 2016 <a href="#"><span>w3cschool.cn</span></a> All Rights Reserved.
+       </div>
+
+  </body>
+</html>

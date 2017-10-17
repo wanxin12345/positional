@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>注册.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+    function w1(){
+    var ww=document.getElementById("e1");
+    var zhanghao=document.getElementById("zhang");
+    var haoval=zhanghao.value;
+    if(haoval==""|haoval.length==0){
+    	ww.innerHTML="账号不能为空！";
+    	ww.style.color="red";
+    	zhanghao.style.border="2px red solid";
+    	userCheckRS=false;
+    }else{
+    	var patt=/^[a-zA-Z][a-zA-Z0-9]{5,9}$/;
+    	if(patt.test(haoval)){
+    		ww.innerHTML="OK!"
+    		ww.style.color="yellow";
+    	zhanghao.style.border="2px yellow solid";
+    	userCheckRS=true;
+    	}else{
+    		ww.innerHTML="字母开头，有数字和字母组成，6-10位！"
+    		ww.style.color="red";
+    	zhanghao.style.border="2px red solid";
+    	userCheckRS=false;
+    		}
+    }
+    }
+    function w2(){
+    var ee=document.getElementById("e2");
+    var mima=document.getElementById("mi");
+    var mival=mima.value;
+    if(mival==""|mi.length==0){
+    	ee.innerHTML="密码不能为空！";
+    	ee.style.color="red";
+    	mima.style.border="2px red solid";
+    	passCheckRS=false;
+    }else{
+    	var patt=/^[0-9]{5,8}$/;
+    	if(patt.test(mival)){
+    		ee.innerHTML="OK!"
+    		ee.style.color="yellow";
+    	mima.style.border="2px yellow solid";
+    	passCheckRS=true;
+    	}else{
+    		ee.innerHTML="密码只能由数字组成,5-8位"
+    		ee.style.color="red";
+    	mima.style.border="2px red solid";
+    	passCheckRS=false;
+    		}
+    }
+    }
+     function w3(){
+    var qq=document.getElementById("e3");
+    var nianling=document.getElementById("nian");
+    var nianval=nianling.value;
+    if(nianval==""|nian.length==0){
+    	qq.innerHTML="年龄不能为空！";
+        qq.style.color="red";
+    	nianling.style.border="2px red solid";
+    	ageCheckRS=false;
+    }else{
+    	var patt=/^[0-9]{1,2}$/;
+    	if(patt.test(nianval)){
+    		qq.innerHTML="OK!"
+    		qq.style.color="yellow";
+    	nianling.style.border="2px yellow solid";
+    	ageCheckRS=true;
+    	}else{
+    	    qq.innerHTML="年龄只能由数字组成,1-2位"
+    		qq.style.color="red";
+    	nianling.style.border="2px red solid";
+    	ageCheckRS=false;
+    		}
+    }
+    }
+     function hobby(){
+    	 var hoho=document.getElementsByName("hobby");
+    	 var checknum=0;
+    	 for(var i=0;i<hoho.length;i++){
+    		 if(hoho[i].checked){
+    			 checknum++;
+    		 }
+    }
+    	 if(checknum>=2){
+    		var show=document.getElementById("sh");
+    		document.getElementById("sh").innerHTML="OK!";
+           show.style.color="yellow";		
+            hobbyCheckRS=true;
+     }else{
+    	var show=document.getElementById("sh");
+    		document.getElementById("sh").innerHTML="至少选择两个！";
+           show.style.color="red";		
+            hobbyCheckRS=false;
+     }
+     }
+     function address(){
+    	 var add=document.getElementsByTagName("option");
+    	 addval=add[4].selected;
+    	if(addval){
+    		var sh2=document.getElementById("sh1");
+    		document.getElementById("sh1").innerHTML="请选择地址！";
+    		sh2.style.color="red";
+    		addressCheckRS=false;
+    	} else{
+    		var sh2=document.getElementById("sh1");
+    		document.getElementById("sh1").innerHTML="OK!";
+    		sh2.style.color="yellow";
+    		addressCheckRS=true;
+    	}
+     }
+    
+    userCheckRS=false;
+	passCheckRS=false;
+	ageCheckRS=false;
+	hobbyCheckRS=false;
+	addressCheckRS=false;
+	function test(){
+	hobby();
+	address();
+		if(userCheckRS&&passCheckRS&&ageCheckRS&&hobbyCheckRS&&addressCheckRS){
+	    var sw=screen.width;
+		var sh=screen.height;
+		var w=500;
+		var h=400;
+		var cw=(sw-w)/2;
+		var ch=(sh-h)/2;
+		window.open("","yangzz","width="+w+"px,height="+h+"px,top="+ch+"px,left="+cw+"px");
+			
+			return true;
+		}else{
+			alert("请认真填写信息！")
+			return false;
+		}
+	}
+	function key(){
+	var keycode=event.keyCode;
+	if(keycode==13){
+	w1();
+	w2();
+	}
+	}
+	function chongzhi(){
+		window.location.reload();
+		}
+	function quxiao(){
+		window.open("表单验证.html");
+		window.close();
+	}
+    </script>
+ <style type="text/css">
+body{
+background-image:url("timg (4).jpg");
+background-size: cover;
+}
+#q1{
+
+width: 500px;
+height: 700px;
+border-radius:20%;
+background-color: black;
+position: relative;
+top: 30px;
+opacity:0.6;
+
+}
+#denglu{
+color:#97BDFB;
+font-size: 40px;
+font-weight: bold;
+font-family:'楷体'；
+}
+.q2{
+font-size: 25px;
+color:#97BDFB;
+border-radius:15px;
+}
+.q3{
+width: 250px;
+height: 30px;
+border-radius:15px;
+}
+.q4{
+color:orange;
+font-size: 25px;
+margin-left: 20px;
+border-radius:15px;
+}
+#neibu{
+width: 350px;
+height:650px;
+}
+textarea::-webkit-input-placeholder{
+color: orange;
+}
+textarea::-moz-placeholder{
+color: orange;
+opacity:1;
+}
+textarea:-ms-placeholder{
+color: orange;
+}
+
+</style>
+  </head>
+  
+  <body>
+   <center>
+    <div id="q1">
+    <div id="neibu" align="left">
+    <span id="denglu">欢迎进入注册页面</span><br><br>
+  <form action="窗口.html" target="yangzz">
+    <span class="q2">账号：</span><input type="text" id="zhang" class="q3" onblur="w1()" onkeydown="key()"><br><span id="e1"></span><br>
+    <span class="q2">密码：</span><input type="password" id="mi" class="q3" onblur="w2()"><br><span id="e2"></span><br> 
+    <span class="q2">年龄:</span><input type="text" name="age" id="nian" class="q3" onblur="w3()"><br><span id="e3"></span><br>
+	   <span class="q2">性别:</span>
+	   <input type="radio" name="sex" value="男" checked="checked"><span class="q2">男</span>
+	   <input type="radio" name="sex" value="女"><span class="q2">女</span><br>
+	   <span class="q2">爱好:</span>
+	   <input type="checkbox" name="hobby"  value="吃饭"><span class="q2">吃饭</span>
+	   <input type="checkbox" name="hobby" value="睡觉"><span class="q2">睡觉</span>
+	   <input type="checkbox" name="hobby" value="看美女" checked="checked"><span class="q2">看美女</span>
+	   <input type="checkbox" name="hobby" value="泡吧"><span class="q2">打豆豆</span><span id="sh"></span><br>
+	   <span class="q2">地址:</span> 
+	   <select id="address">
+	   <option>北京</option>
+	   <option>上海</option>
+	   <option>深圳</option>
+	   <option>厦门</option>
+	   <option selected="selected">-请选择-</option>
+	   </select><span id="sh1"></span><br>
+	  <span class="q2"> 头像:</span><input type="file" id="touxiang"><br>
+	   <span class="q2">自我介绍:</span><br>
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="4" cols="20" placeholder=" 请自我介绍...."></textarea><br><br>
+    <input type="submit" value="注册" class="q4" onclick="return test()" >
+    <input type="reset" value="重置" class="q4" onclick="chongzhi()">
+   <input type="button" value="取消" class="q4" onclick="quxiao()">
+     </form>
+    </div>
+    </div>
+    </center>
+  </body>
+</html>

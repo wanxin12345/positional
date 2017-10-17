@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>条状菜单.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    
+ <style type="text/css">
+    *{ /* 清除默认值 */
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    }
+    #divTab{/* 控制整个导航栏的页面位置 */
+    padding: 20px;
+    }
+    #tab li{ /* 导航条中每项都使用浮动 ,每项都省略标识符号*/
+    list-style-type: none;
+    width:120px;
+    }
+    #tab a{/* 设置每个选项的样式  */
+    display: inline-block;
+    width: 120px;
+    padding: 10px 0px;
+    background-color: blue;
+    border: 1px gray solid;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    }
+    #tab a:hover{/* 设置鼠标悬停在选项上的样式 */
+    background-color: #A0B9E1;
+    border-bottom-color: #55A0FF;
+    }
+    
+    #sub1 a,#sub2 a,#sub3 a,#sub4 a{
+    width: 100px;
+    position: relative;
+    left:20px;
+    background-color: #55A0FF;
+    }
+    </style>
+
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+    	$("#tab ul:hidden").prev().click(function(){
+    		$(this).next().toggle();
+    		//$(this).parent().siblings().find("ul").hide();
+
+    	});
+    })
+  
+  
+  </script>
+  
+  </head>
+  
+  <body>
+    <div id="divTab">
+	    <div id="tab">
+		    <ul>
+			    <li>
+				    <a href="#" id="t1"  >HTML</a>
+				    <ul id="sub1" style="display: none;">
+				    <li><a href="#">HTML1</a></li>
+				    <li><a href="#">HTML2</a></li>
+				    <li><a href="#">HTML3</a></li>
+				    </ul>
+			    <li>
+			    <li>
+			    	<a href="#" id="t2" >CSS</a>
+			    	<ul id="sub2" style="display: none;" >
+				    <li><a href="#">CSS1</a></li>
+				    <li><a href="#">CSS2</a></li>
+				    </ul>	
+			    </li>
+			    <li>
+				    <a href="#" id="t3" >JavaScript</a>
+				    <ul id="sub3" style="display: none;" >
+				    <li><a href="#">JavaScript</a></li>
+				    </ul>
+			    </li>
+			    <li>
+				    <a href="#" id="t4" >jQuery</a>
+				    <ul id="sub4" style="display: none;" >
+				    <li><a href="#">jQuery1</a></li>
+				    <li><a href="#">jQuery2</a></li>
+				    <li><a href="#">jQuery3</a></li>
+				    </ul>
+			    </li>
+		    </ul>
+	    </div>
+    </div>
+
+  </body>
+</html>

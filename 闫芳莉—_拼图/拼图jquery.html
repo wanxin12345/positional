@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>拼图jquery.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript" src="vidio/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	$("#image img").on({
+    		dragstart:function(e){
+    		event.dataTransfer.setData("imgId",e.target.id);	
+    		},
+    		drag:function(e){
+    			e.preventDefault();//阻止浏览器默认行为	
+    			$(this).css({"position":"absolute","top":e.pageY,"left":e.pageX}) 
+    		},
+    		dragend:function(e){
+    			e.preventDefault();//阻止浏览器默认行为	
+    			$(this).css({"position":"static","top":0,"left":0});
+    		}
+    	});
+    	$("#kuangjia div,#store").on({
+    		dragenter:function(e){
+    			e.preventDefault();//阻止浏览器默认行为
+    			$(this).addClass("subColor");
+
+    		},
+    		dragover:function(e){
+    			e.preventDefault();//阻止浏览器默认行为
+	
+    		},
+    		dragleave:function(e){
+    			e.preventDefault();//阻止浏览器默认行为
+    			$(this).removeClass("subColor");
+    		},
+    		drop:function(e){
+    			var imgID=event.dataTransfer.getData("imgID");
+    			 //e.target.appendChild(document.getElementById(imgID));
+    			 if($(this).html()=="")
+    				 $(this).append($("#"+imgID)); 
+    			 }
+    	});
+    })
+    </script>
+    <style type="text/css">
+    *{
+    padding:0px;
+    margin: 0px;
+    border:0px;
+    }
+    #allImage{
+    width:1700px;;
+    height:900px;
+    margin: 10px auto;
+    position: relative;
+    }
+    #kuangjia{
+    width:546px;
+    height:549px;
+    margin: 10px auto;
+    }
+    #kuangjia div{
+    width:170px;
+    height:171px;
+    border:1px #eee solid;
+    float: left;
+    }
+    .subColor{
+    background-color: #eee;
+    }
+    #image{
+    width:1615px;
+    height:170px;
+    border:1px red solid;
+    margin:95px auto;
+    }
+    #image img{
+     border:1px #eee solid;
+    }
+    #store{/*临时存放图片的框框 */
+    width:170px;
+    height:171px;
+    background-color: #eee;
+    position: absolute;
+    top:180px;
+    left:200px;
+    }
+    #yuantu{
+    position: absolute;
+    top:10px;
+    right:20px;
+    }
+    </style>
+  </head>
+  
+  <body>
+    <div id="allImage">
+         <div id="store"></div><!-- 临时存放图片的框框 -->
+         <div id="yuantu"><img src="image2/02.png"></div><!-- 原图 -->
+	     <div id="kuangjia">
+		     <div></div>
+		     <div></div>
+		     <div></div>
+		     <div></div>
+		     <div></div>
+		     <div></div>
+		     <div></div>
+		     <div></div>
+		     <div></div>
+	     </div>
+    
+	     <div id="image">
+		     <img src="image2/02_01.jpg" draggable="true"  id="drag1">
+		     <img src="image2/02_02.jpg" draggable="true"  id="drag2">
+		     <img src="image2/02_03.jpg" draggable="true"  id="drag3">
+		     <img src="image2/02_04.jpg" draggable="true"  id="drag4">
+		     <img src="image2/02_05.jpg" draggable="true"  id="drag5">
+		     <img src="image2/02_06.jpg" draggable="true"  id="drag6">
+		     <img src="image2/02_07.jpg" draggable="true"  id="drag7">
+		     <img src="image2/02_08.jpg" draggable="true"  id="drag8">
+		     <img src="image2/02_09.jpg" draggable="true"  id="drag9">
+	     </div>
+	     
+     </div>
+  </body>
+</html>

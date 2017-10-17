@@ -1,0 +1,210 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>main.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+    *{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    }
+    body{
+    min-width: 1280px;
+    background-color: #F2F2F2;
+    }
+    #head{
+    width: 980px;
+    height: 154px;
+    border: 1px #F1F1F1 solid;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    }
+   
+    #logoInfo{
+    width: 942px;
+    height: 94px;
+    border-bottom: 3px #A71E32 solid;
+    }
+    #logoInfo_logo{
+    margin-top: 19px;
+    }
+    #logoInfo_tel{
+    margin-left: 170px;
+    }
+    #logoInfo_tel span{
+    color: #A71E32;
+    }
+    #logoInfo_tel b{
+    display: inline-block;
+    width: 29px;
+    height: 17px;
+    background-image: url("image1/boc2013_top_icon.png");
+    background-repeat:no-repeat;
+    }
+    #logoInfo_search{
+    display: inline-block;
+    border: 1px #DADADA solid;
+    border-radius: 3px;
+    position: relative;
+    left:40px;
+    }
+    #logoInfo_search input{
+    width: 190px;
+    height: 27px;
+    text-indent: 5px;
+    }
+    #logoInfo_search img{
+    position: absolute;
+    top:5px;
+    right: 5px;
+    }
+    
+    #nav{
+    width:100%;
+    height: 42px;
+    position: relative;
+    top:15px;
+    }
+    #nav a{
+    width: 122.25px;
+    height: 42px;
+    display: inline-block;
+    float: left;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    }
+    #nav a:hover{
+    background-image: url("image1/selBg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    
+    .selTab{
+    background-image: url("image1/selBg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    .blurTab{
+    background-image: url("image1/blurBg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+   
+    #sub2{
+    background-color: #F9F8F9;
+    position: relative;
+    top:15px;
+    border-left: 1px #DADADA solid;
+    border-right: 1px #DADADA solid;
+    border-bottom: 1px #DADADA solid;
+    height: 170px;
+    border-radius:3px;
+    }
+    #sub2 ul{
+    float: left;
+    width: 200px;
+    height: 130px;
+    border-right: gray 1px dashed;
+    margin-left: 30px;
+    margin-top: 20px;
+    }
+    #sub2 ul li{
+    list-style-image: url("image1/li_icon.png");
+    list-style-position: inside;
+    margin: 10px 0px;
+    }
+    #sub2 #sp{
+    clear: both;
+    position: relative;
+    left:30px;
+    top: 20px;
+    display: inline-block;
+    }
+    #sub2 #sp img{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    }
+    
+    </style>
+  
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  	<script type="text/javascript">
+    $(function(){
+    	$("#nav a,#subMenu>div").hover(function(){
+    		
+    		$("#subMenu>div").eq($(this).index()).show();
+    		
+    		$("#nav a").eq($(this).index()).attr("class","selTab");
+    	},function(){
+    		
+    		$("#subMenu>div").eq($(this).index()).hide();
+    	
+    		$("#nav a").eq($(this).index()).attr("class","blurTab");
+    	});
+    });
+    </script>
+  </head>
+  
+  <body>
+    <div id="all" align="center">
+    <div id="head">
+    	<!-- logo信息 -->
+	    <div id="logoInfo" align="left">
+	    <img id="logoInfo_logo" src="image1/boc2013_logo.png" />
+	    <span id="logoInfo_tel"><b></b>服务热线:<span>95566</span>&nbsp;&nbsp;信用卡热线:<span>40066 95566</span></span>
+	    <span id="logoInfo_search"><input type="text" value="请输入检索关键词"><img src="image1/boc2013_search1.png"/></span>
+	    </div>
+	    
+	    <div id="nav">
+	    <a href="#" class="blurTab" id="t1" >首页</a>
+	    <a href="#" class="blurTab" id="t2" >公司金融</a>
+	    <a href="#" class="blurTab" id="t3" >个人金融</a>
+	    <a href="#" class="blurTab" id="t4" >银行卡</a>
+	    <a href="#" class="blurTab" id="t5" >金融市场</a>
+	    <a href="#" class="blurTab" id="t6" >电子银行</a>
+	    <a href="#" class="blurTab" id="t7" >投资者关系</a>
+	    <a href="#" class="blurTab" id="t8" >关于中行</a>
+	    </div>
+	    
+	    <div id="subMenu" align="left" >
+	    	<div id="sub1" style="display: none;"></div>
+		    <div id="sub2" style="display: none;">
+		    <ul id="u1">
+		    <li>公司融资服务</li>
+		    <li>贸易金融服务</li>
+		    <li>公司金融市场服务</li>
+		    <li>人民币结算服务</li>
+		    </ul>
+		    <ul id="u2">
+		    <li>公司存款服务</li>
+		    <li>养老金服务</li>
+		    <li>全球公司金融</li>
+		    <li>跨境人民币服务</li>
+		    </ul>
+		    <ul id="u3">
+		    <li>中小企业服务</li>
+		    <li>全球现金管理</li>
+		    <li>公司银行服务</li>
+		    <li>公告信息</li>
+		    </ul>
+		    <span id="sp">
+		    <img src="image1/11.jpg"/><br>
+		    <img src="image1/22.jpg"/>
+		    </span>
+		    </div>
+	    </div>
+    </div>
+    </div>
+  </body>
+</html>
+

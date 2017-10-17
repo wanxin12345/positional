@@ -1,0 +1,633 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>艺龙登录.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  <script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+  
+  <style type="text/css">
+  /*--------------------------------清除默认*/
+  *{
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  }
+  body{                             /*背景颜色*/
+  background-color: #E8EFF6;
+  }
+  #head_div{                        /*logo存放处*/
+  width: 1010px;
+  height:80px;
+  text-align:left;
+  padding-top:25px;
+  }
+  #chahao{                               /*叉号*/
+  font-size:12px;
+  background-image: url("sogoutip_01.png");
+  background-repeat:no-repeat;
+  width:245px;
+  height:50px;
+  position: absolute;
+  left:150px;
+  top:-60px;
+  text-align: center;
+  padding-top:20px;
+  z-index:1;
+  }
+  #chahao2{
+  color:#ccc;
+  position: absolute;
+  left:374px;
+  top:-60px;
+  z-index:2;
+  }
+  #banner_center{                    /*图片和验证界面*/
+  width: 1000px;;
+  height: 346px;
+  margin-top: -5px;
+  }
+  #banner_right{                      /*验证界面*/
+  width: 375px;
+  height: 348px;
+  /*border-radius:5px;*/
+  position: absolute;
+  left:1060px;
+  top: 100px;
+  background-color: white;
+  }
+  #banner_right input{
+  margin-top:23px;
+  margin-left:0px;
+  }
+  #banner_right span{
+  font-size:12px;
+  color: #555555;
+  }
+  #banner_right_center{                               /*单选按钮切换*/
+  width:285px;
+  height:230px;
+  }
+  #banner_right_center1{
+  width:285px;
+  height:232px;
+  margin-left:45px;
+  }
+  .running_radio{
+  position: relative;
+  left: 20px;
+  }
+  #right_input1{/*--------------------------------------登录样式*/
+  border: 1px #CCCCCC solid;
+  width: 284px;
+  height: 35px;
+  position: absolute;
+  left: 46px;
+  top: 35px;
+  border-radius:3px;
+  background-image: url("images_botton_right_top/myelong_login_01.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  }
+   #right_input2{/*-------------------------密码验证样式*/
+  border: 1px #CCCCCC solid;
+  width: 284px;
+  height: 35px;
+  position: absolute;
+  left: 46px;
+  top:90px;
+  border-radius:3px;
+  background-image: url("images_botton_right_top/myelong_login_03.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-right: 20px;
+  }
+  #running_radio{
+  position: relative;
+  left:40px;
+  top:2px;
+  }
+  .running_radio{
+  margin-left:20px;
+  display: inline-block;
+  }
+  #top_banner_right{
+  position:relative;
+  left:50px;
+  top:-20px;
+  }
+  #change_hide_show2 h3{
+  margin-top:65px;
+  color: #37d;
+  }
+  #change_hide_show2 a{
+  text-decoration: none;
+  color: #37d;
+  font: 14px/32px Microsoft Yahei;
+  border: 1px #ccddee solid;
+  padding: 3px 12px;
+  color: #555;
+  border-radius:15px;
+  background-color: #fff; 
+  }
+  #change_hide_show2 a:hover{
+  background-color:#36c;
+  color: #fff; 
+  }
+ /*  ----------------------------------------------验证码输入*/
+ #yanzhengma{
+ position: absolute;
+ left:45px;
+ top: 150px;
+ } 
+  #yanzhengma input{
+  border: 1px red solid;
+  width: 150px;
+  height: 32px;
+  }
+  #yanzhengma img{
+ position: absolute;
+ top: 22px;
+ left:160px;
+  }
+  #change_num{
+   font-size:12px;
+   position:absolute;
+   left: 280px;
+   top: 180px;
+   text-decoration: none;
+   color: blue;
+  }
+  #change_num:hover{
+  color: #F98B43;
+  }
+  #denglu_up{
+  position: absolute;
+  left:45px;
+  top: 200px;
+  }
+  #load_center_down{
+  text-decoration:none;
+  width: 285px;
+  height:40px;
+  position: absolute;
+  top: 250px;
+  left: 45px;
+  background-color: #ff8800;
+ }
+ #load_center_down span{
+ color:white;
+ font:18px Microsoft YaHei;
+ display: inline-block;
+ padding-top: 5px;
+ position: relative;
+ left: 120px;
+ }
+ #load_center_down:hover{
+  background-color:#EE6600;
+ }
+ 
+  #forget_a{
+  text-decoration: none;
+  font-size: 12px;
+  margin-left:130px;
+  }
+  #forget_a:hover{
+  color:#F98B43; 
+  }
+  #banner_center img:hover{
+  display:inline-block;
+  opacity:0.9;
+  }
+  #selected_center{                  /*单选按钮切换后显示*/
+  border:1px #ccc solid; 
+  width:112px;
+  height: 35px;
+  border-radius: 2px;
+  }
+  #right_input_click1{
+  border:1px #ccc solid; 
+  width:165px;
+  height: 35px;
+  border-radius: 2px;
+  }
+  #right_input_click2{
+  border:1px #ccc solid; 
+  width:168px;
+  height: 35px;
+  border-radius: 2px;
+  }
+  #get_password{
+  text-decoration:none;
+  border:1px #ccc solid;
+  display:inline-block; 
+  width:100px;
+  height: 35px;
+  border-radius:5px;
+  color: white;
+  background-color:#37D;
+  text-align: center;
+  font: 14px/35px Microsoft Yahei;
+  cursor: pointer;
+  }
+  #remember_me{
+  display:inline-block;
+  font-size: 12px;
+  color: #555;
+  margin-left: 5px;
+  }
+  #load_center_down1{
+  text-decoration:none;
+  width: 285px;
+  height:40px;
+  position: absolute;
+  top: 220px;
+  left: 45px;
+  background-color: #ff8800;
+  }
+  #load_center_down1 span{
+ color:white;
+ font:18px Microsoft YaHei;
+ display: inline-block;
+ padding-top: 5px;
+ position: relative;
+ left: 120px;
+ }
+ #load_center_down1:hover{
+  background-color:#EE6600;
+ }
+ #no_phone{
+ position: relative;
+ top:45px;
+ }
+ #no_info{
+ position: absolute;
+ left: 45px;
+ top:295px;
+ }
+  #bottom_lianjie a{                  /*底部连接*/
+  text-decoration: none;
+  font-size: 12px;
+  color: #555555;
+  }
+  #bottom_lianjie a:hover{            /*链接悬停样式*/
+  color: #F98B43;
+  }
+   #bottom_lianjie{
+  position: absolute;
+  left:615px;
+  top:570px;
+   }
+ .q2{
+ font-size:8px;
+ margin-left:2px;
+ }
+ #bottom_sanjiao{
+ position: absolute;
+ left: 1365px;
+ top: 471px;
+ }
+ #bottom_sanjiao a{
+ text-decoration: none;
+ font-size: 13px;
+ }
+ #bottom_sanjiao a:hover{
+ color: #F98B43; 
+ }
+ #dayuhao:hover{
+ background-color:#F98B43;
+ }
+  #dayuhao{
+  font-weight:bold;
+  color:white;
+  display:inline-block;
+  width: 14px;
+  height:14px;
+  background-color: blue;
+  border-radius:10px;
+  margin-left: 2px;
+  }
+ /* ------------------------------------其他账号登录方式*/
+ #center_other{
+ position: absolute;
+ left:45px;
+ top:305px;
+ }
+ #center_other span{
+ position: relative;
+ top: -5px;
+ }
+ #center_other a{
+ margin-left:5px;
+ }
+  .down_1:hover{
+  content: url("center_down_smallmark/myelong_login_001.png");
+  }
+  .down_2:hover{
+  content: url("center_down_smallmark/myelong_login_002.png");
+  }
+  .down_3:hover{
+  content: url("center_down_smallmark/myelong_login_003.png");
+  }
+  .down_4:hover{
+  content: url("center_down_smallmark/myelong_login_004.png");
+  }
+  .down_5:hover{
+  content: url("center_down_smallmark/myelong_login_005.png");
+  }
+  #bottom_images{/*---------------------底部连接*/
+  position: absolute;
+  left:735px;
+  top: 540px;
+  }
+  .bottom_1{/*底部连接样式1 2 3 4 */
+  display:inline-block;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_01.png");
+  background-repeat: no-repeat;
+  width: 135px;
+  height:20px;
+  padding-top:5px;
+  }
+  .bottom_1:hover{
+  color: #F98B43;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_1.png");
+  }
+  .bottom_2{
+  display:inline-block;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_02.png");
+  background-repeat: no-repeat;
+  width: 100px;
+  height:20px;
+  padding-top:5px;
+  }
+  .bottom_2:hover{
+  color: #F98B43;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_2.png");
+  }
+  .bottom_3{
+  display:inline-block;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_03.png");
+  background-repeat: no-repeat;
+  width: 100px;
+  height:20px;
+  padding-top:5px;
+  }
+  .bottom_3:hover{
+  color: #F98B43;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_3.png");
+  }
+  .bottom_4{
+  display:inline-block;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_04.png");
+  background-repeat: no-repeat;
+  width: 100px;
+  height:20px;
+  padding-top:5px;
+  }
+  .bottom_4:hover{
+  color: #F98B43;
+  background-image:url("images_bottom/C-_Users_yh_Desktop_logo_4.png");
+  }
+  #bottom_images a{
+  text-decoration: none;
+  color:#555555; 
+  font-size:13px;
+  }
+  .blur{
+    color: #bcbcbc;
+  }
+   .focus{
+    color: #bcbcbc;
+   }
+  
+   #checkError{                                  /*出错提示*/
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    height: 15px;
+    position: relative;
+    left:45px;
+    top: 15px;
+    background-color: #FFEEED;
+    border: 1px solid #FFD1CF;
+    display: none;
+    }
+  #checkError1{
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    height: 15px;
+    position: absolute;
+    left:45px;
+    top:112px;
+    background-color: #FFEEED;
+    border: 1px solid #FFD1CF;
+    width:277px;
+    height: 15px;
+    display: none;
+  }
+  </style>
+  <script type="text/javascript">
+  $(function(){
+	  $("#chahao2").click(function(){/*对叉号进行点击隐藏效果*/
+		  $("#chahao").hide();
+		  $("#chahao2").hide();
+	  });
+	  $("#change_hide_show2").hide();
+	  $("#marking_change a").eq(1).hide();/*对第二个标识进行初始化隐藏*/
+	  $("#marking_change a").click(function(){
+		 if($(this).index()==0){
+			 $("#marking_change a").eq(1).show()
+			 $("#marking_change a").eq(0).hide()
+			 $("#change_hide_show1").hide();
+			 $("#change_hide_show2").show();
+		}else if($(this).index()==1){
+			$("#marking_change a").eq(0).show()
+			$("#marking_change a").eq(1).hide()
+			$("#change_hide_show2").hide();
+			$("#change_hide_show1").show();
+		 }
+	});
+	  $("input").attr("class","blur");
+	  $("#banner_right_center input").focus(function(){
+    		if($(this).val()==this.defaultValue){
+    			$(this).val("").attr("class","focus");
+    			$(this).parent().index()==1?$(this).attr("type","password"):"密码";
+    		}
+    	}).blur(function(){
+    		if($(this).val()==""){//用户未输入,恢复默认提醒文字
+    			$(this).val(this.defaultValue).attr("class","blur");
+    		}
+    	});
+	  $("input").attr("class","blur");
+	  $("#banner_right_center1 input").focus(function(){
+    		if($(this).val()==this.defaultValue){
+    			$(this).val("").attr("class","focus");
+    			$(this).parent().index()==1?$(this).attr("type","password"):"密码";
+    		}
+    	}).blur(function(){
+    		if($(this).val()==""){//用户未输入,恢复默认提醒文字
+    			$(this).val(this.defaultValue).attr("class","blur");
+    		}
+    	});
+	                                  /*提前隐藏第二个页面*/
+	  $("#banner_right_center1").hide(); 
+	  $("#top_banner_right input").first().attr("checked","checked")                              
+	  $("#top_banner_right input").click(function(){
+		  if($(this).index()/2==0){
+			$("#banner_right_center").show();
+			$("#banner_right_center1").hide();
+		  }else if($(this).index()/2==1){
+			$("#banner_right_center").hide();
+			$("#banner_right_center1").show();
+		  }
+	  });
+	  $("#no_info").hide()
+	  $("#no_phone").hover(function(){
+	  $("#no_info").toggle();  
+	  });                                       /*表单验证*/
+	    var accounCheckRS=false;
+    	var passCheckRS=false;
+    	$("#right_input1").blur(function(){
+    		var patt=/^[a-zA-Z][a-zA-Z0-9]{5,9}$/;
+    		if(patt.test($(this).val())){
+    			$("#checkError").html("");
+    			accounCheckRS=true;
+    		}else{//不满足
+    			$("#checkError").html("账号: 必须由字母开头,可以由字母和数字组成");
+    			accounCheckRS=false;
+    		}
+    	});
+    	$("#right_input2").blur(function(){
+    		var patt=/^[0-9]{5,10}$/;
+    		if(patt.test($(this).val())){
+    			$("#checkError").html("");
+    			passCheckRS=true;
+    		}else{//不满足
+    			$("#checkError").html("密码: 必须由数组组成,5-10位");
+    			passCheckRS=false;
+    		}
+    	});
+    	$("#load_center_down").click(function(){
+    		if(!(passCheckRS&&accounCheckRS)){
+    			$("#checkError").show();
+    			$("#checkError").html("请输入账户名");
+    			return false;
+    		}
+    	});
+	     var accounCheckRS=false;
+    	$("#right_input_click1").blur(function(){
+    		var patt=/^[0-9]{5,9}$/;
+    		if(patt.test($(this).val())){
+    			$("#checkError1").html("");
+    			$("#checkError1").hide();
+    			accounCheckRS=true;
+    		}else{//不满足
+    			$("#checkError1").show();
+    			$("#checkError1").html("请输入合法手机号");
+    			accounCheckRS=false;
+    		}
+    	});
+    	$("#load_center_down1").click(function(){
+    		if(!(passCheckRS&&accounCheckRS)){
+    			$("#checkError1").show();
+    			$("#checkError1").html("请输入合法手机号");
+    			return false;
+    		}
+    	});
+  });
+  </script>
+  </head>
+  <body>
+  <center>
+    <div id="head_div">
+    <img src="logo.png"><!--logo图片-->
+    </div>
+    <div id="banner_center" align="left">
+    <img src="banner.jpg" width="620px" height="350px;">
+    <div id="banner_right" align="left"><!-- 右边边框内容 -->
+    <div id="marking_change">
+    <a href="javascript:void(0)"><img src="images_botton_right_top/banner_right_top_01.png" align="right" style="border: 1px red solid;"></a>  
+    <a href="javascript:void(0)"><img src="images_botton_right_top/banner_right_top_02.png" align="right" style="border: 1px red solid;"></a>  
+    </div>
+    <div id="change_hide_show1">
+    <a href="javascript:void(0)">"<span id="chahao2">X</span></a>
+    <span id="chahao">港澳台手机用户请使用“手机动态密码登录”</span><!--叉号-->
+    <div id="top_banner_right">
+    <input type="radio" name="input_type"><span>普通登录</span>
+    <input type="radio" name="input_type" id="running_radio"><span class="running_radio">手机动态密码登录</span>
+    </div>
+    <div id="banner_right_center">
+    <input type="text" value="用户名/卡号/手机号/邮箱"  id="right_input1"><br>
+    <div id="checkError"></div>
+    <input type="password" value="密码" id="right_input2"><br>
+    <div id="yanzhengma"><!--输入验证码-->
+    <input type="text" value="验证码">
+    <a href=""><img src="yanzheng-img1.png"></a> 
+    </div>
+    <a href="" id="change_num">换一张</a>
+    <div id="denglu_up"><!-- 登录上方的忘记密码等 -->
+    <input type="checkbox" checked="checked" style="background-color:red" align="left"><span>两个月内免登录</span>
+    <a href="javascript:void(0)" id="forget_a">忘记密码</a>
+    </div>
+    <a href="#" id="load_center_down"><span>登录</span></a> 
+    <div id="center_other"><!--使用其他方式登录-->
+    <span>使用其他账号登陆：</span>
+    <a href="javascript:void(0)" ><img src="center_down_smallmark/myelong_login_01.png" class="down_1"></a>
+    <a href="javascript:void(0)" ><img src="center_down_smallmark/myelong_login_02.png" class="down_2"></a>
+    <a href="javascript:void(0)" ><img src="center_down_smallmark/myelong_login_03.png" class="down_3"></a>
+    <a href="javascript:void(0)" ><img src="center_down_smallmark/myelong_login_04.png" class="down_4"></a>
+    <a href="javascript:void(0)" ><img src="center_down_smallmark/myelong_login_05.png" class="down_5"></a>
+    </div>
+    </div>
+    <div id="banner_right_center1" align="left">
+    <select id="selected_center">
+    <option>中国大陆+86</option>
+    <option>中国大陆+86</option>
+    <option>中国大陆+86</option>
+    <option>中国大陆+86</option>
+    <option>中国大陆+86</option>
+    </select>
+    <input type="text" value="请输入手机号" id="right_input_click1"><br>
+    <div id="checkError1"></div>
+    <input type="password" value="输入动态密码" id="right_input_click2">
+    <a href="javascript:void(0)" id="get_password">获取动态密码</a><br>
+    <input type="checkbox" checked="checked"><span id="remember_me">记住我</span><br>
+    <a href="#" id="load_center_down1"><span>登录</span></a><br>
+    <span id="no_phone">用户未绑定手机号？</span> 
+    <img src="no_info.png" id="no_info">
+    </div>
+    </div>
+    <div align="center" id="change_hide_show2">
+    <h3>请使用艺龙APP扫码登陆</h3>
+    <img src="saomadenglu.png"><br>
+    <a href="javascript:void(0)">使用帮助</a>
+    
+    </div>
+    </div>
+    </div>
+    <div id="bottom_sanjiao">                                <!-- 注册按钮 -->
+    <a href="艺龙注册.html"><span>立即注册</span><span id="dayuhao">&gt;</span></a> 
+    </div> 
+    <div id="bottom_images"><!--底部小图标  -->
+    <a href="javascript:void(0)"><b class="bottom_1">iPhone / iPad</b></a>  
+    <a href="javascript:void(0)"><b class="bottom_2">Android </b></a>
+    <a href="javascript:void(0)"><b class="bottom_3">Windows </b></a>
+    <a href="javascript:void(0)"><b class="bottom_4">其他手机端</b></a>
+   </div>
+   <div id="bottom_lianjie">                                 <!--底部连接-->
+    <a href="javascript:void(0)">酒店加盟</a><span class="q2">|</span>
+    <a href="javascript:void(0)">酒店加盟</a><span class="q2">|</span>
+    <a href="javascript:void(0)">代理合作</a><span class="q2">|</span>
+    <a href="javascript:void(0)"> 广告服务</a><span class="q2">|</span>
+    <a href="javascript:void(0)">联系我们 </a>
+    <span>©1999 - 2014 eLong, Inc or its affiliates. All Rights Reserved.</span>    
+    </div>
+    </center>
+  </body>
+</html>
